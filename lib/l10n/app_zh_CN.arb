@@ -1,0 +1,160 @@
+{
+  "@@locale": "zh_CN",
+  "appName": "LoveYou",
+  "checkinButton": "爱你",
+  "checkinSuccess": "签到成功 ❤️",
+  "autoCheckinNotification": "今天已自动签到 ❤️",
+  "streakDays": "连续签到 {count} 天",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "welcomeTitle": "LoveYou 守护你",
+  "welcomeSubtitle": "每天一个「爱你」，让关心你的人安心",
+  "setupName": "你的名字",
+  "setupNameHint": "请输入你的姓名",
+  "setupContact": "紧急联系人",
+  "setupContactName": "联系人姓名",
+  "setupContactEmail": "联系人邮箱",
+  "setupDone": "开始守护",
+  "settingsTitle": "设置",
+  "settingsCheckinMode": "签到模式",
+  "settingsManualMode": "手动签到",
+  "settingsAutoMode": "自动签到",
+  "settingsCheckinInterval": "签到间隔",
+  "settingsInterval24h": "每 24 小时",
+  "settingsInterval12h": "每 12 小时",
+  "settingsInactivityThreshold": "无活动预警时间",
+  "settingsInactivityHours": "{hours} 小时",
+  "@settingsInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsLanguage": "语言",
+  "settingsAccessibility": "关爱模式（适老化）",
+  "settingsLastMessage": "遗言 / 留言",
+  "settingsContacts": "紧急联系人",
+  "settingsPurchase": "解锁全部功能",
+  "contactsTitle": "紧急联系人",
+  "contactsAdd": "添加联系人",
+  "contactsMax": "最多 {max} 人",
+  "@contactsMax": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsExtraCost": "额外联系人 ¥1.99/人",
+  "contactsDefault": "默认（含 1 人）",
+  "messageTitle": "遗言 / 留言",
+  "messageHint": "写下你想对 TA 说的话...",
+  "messageSaved": "已保存",
+  "purchaseTitle": "解锁 LoveYou",
+  "purchaseDescription": "一次买断，终身守护",
+  "purchasePrice": "¥8.00",
+  "purchaseButton": "立即解锁",
+  "purchaseRestoreButton": "恢复购买",
+  "alertPreWarning": "嘿，你还好吗？点一下 ❤️",
+  "alertInactivityHours": "已超过 {hours} 小时未活动",
+  "@alertInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "modeChangeNotice": "签到模式已切换，已通知所有紧急联系人",
+  "thresholdChangeNotice": "预警时间已更新，已通知所有紧急联系人",
+  "locationUnavailable": "位置不可用",
+  "cancel": "取消",
+  "confirm": "确认",
+  "save": "保存",
+  "delete": "删除",
+  "edit": "编辑",
+  "done": "完成",
+  "voiceListening": "正在听...",
+  "voiceCheckin": "语音签到",
+  "checkinReminderNotification": "别忘了今天签到哦 ❤️",
+  "contactDeleteConfirm": "确定要删除此联系人吗？",
+  "messageDescription": "当预警触发时，这段话会随邮件一起发送给你的紧急联系人。",
+  "emailSetupTitle": "邮箱设置",
+  "emailSetupHeading": "配置发信邮箱",
+  "emailSetupDescription": "当你未按时签到时，App 会通过这个邮箱给紧急联系人发送提醒邮件。",
+  "emailNotConfigured": "未配置（邮件无法发送）",
+  "emailSaved": "邮箱配置已保存",
+  "emailTestSuccess": "测试邮件发送成功！请检查收件箱",
+  "emailProviderAuto": "自动检测",
+  "emailProviderQQ": "QQ 邮箱",
+  "emailProvider163": "网易 163",
+  "emailProviderCustom": "自定义 SMTP",
+  "emailProviderLabel": "邮箱类型",
+  "emailAddressLabel": "邮箱地址",
+  "emailAddressHint": "you@example.com",
+  "emailAddressRequired": "请输入邮箱",
+  "emailAddressInvalid": "邮箱格式不正确",
+  "emailPasswordLabel": "密码 / 授权码",
+  "emailPasswordHint": "Gmail 用应用专用密码，QQ/163 用授权码",
+  "emailPasswordRequired": "请输入密码或授权码",
+  "emailSmtpHost": "SMTP 服务器",
+  "emailSmtpHostRequired": "请输入 SMTP 服务器",
+  "emailSmtpPort": "端口",
+  "emailTipTitle": "提示",
+  "emailTipContent": "• Gmail：需开启「两步验证」后生成「应用专用密码」\n• QQ 邮箱：设置 → 账户 → 生成「授权码」\n• 163 邮箱：设置 → POP3/SMTP → 开启并获取授权码\n• 密码仅存储在你的手机本地，不会上传",
+  "emailSaveButton": "保存配置",
+  "emailTestButton": "发送测试邮件",
+  "emailTesting": "发送中...",
+  "emailErrorAuthTitle": "登录验证失败",
+  "emailErrorNetworkTitle": "网络连接失败",
+  "emailErrorGenericTitle": "发送失败",
+  "emailErrorGenericMsg": "错误信息：{error}",
+  "@emailErrorGenericMsg": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "emailErrorNetworkSteps": "1. 检查手机网络是否正常（Wi-Fi 或蜂窝数据）\n2. 如果使用 VPN，尝试关闭后重试\n3. 如果是自定义 SMTP，请确认服务器地址和端口是否正确\n4. 部分网络环境可能屏蔽了 465/587 端口，可尝试切换",
+  "emailErrorGenericSteps": "请检查：\n1. 邮箱地址是否正确\n2. 密码/授权码是否正确\n3. 网络是否正常",
+  "emailErrorDismiss": "知道了",
+  "emailGuideQQ": "❌ QQ/Foxmail 邮箱不能使用登录密码，需要使用「授权码」\n\n获取步骤：\n1. 电脑打开 mail.qq.com 登录邮箱\n2. 点击「设置」→「账户」\n3. 找到「POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV 服务」\n4. 开启「IMAP/SMTP 服务」（需短信验证）\n5. 点击「生成授权码」\n6. 将 16 位授权码填入本页面的「密码/授权码」栏",
+  "emailGuide163": "❌ 网易邮箱不能使用登录密码，需要使用「授权码」\n\n获取步骤：\n1. 电脑打开 mail.163.com 登录邮箱\n2. 点击「设置」→「POP3/SMTP/IMAP」\n3. 开启「IMAP/SMTP 服务」\n4. 按提示用手机发短信验证\n5. 获得授权码后填入本页面的「密码/授权码」栏",
+  "emailGuideGmail": "❌ Gmail 需要使用「应用专用密码」\n\n获取步骤：\n1. 打开 myaccount.google.com\n2. 进入「安全性」→「两步验证」（必须先开启）\n3. 在两步验证页面底部找到「应用专用密码」\n4. 选择「邮件」→ 生成密码\n5. 将 16 位密码填入本页面的「密码/授权码」栏\n\n⚠️ 如果找不到「应用专用密码」，请先确保已开启两步验证",
+  "emailGuideOutlook": "❌ Outlook/Hotmail 需要使用「应用密码」\n\n获取步骤：\n1. 打开 account.microsoft.com\n2. 进入「安全」→「高级安全选项」\n3. 开启「两步验证」\n4. 在「应用密码」中创建新密码\n5. 将生成的密码填入本页面",
+  "emailGuideICloud": "❌ iCloud 邮箱需要使用「App 专用密码」\n\n获取步骤：\n1. 打开 appleid.apple.com 登录\n2. 进入「登录和安全」→「App 专用密码」\n3. 点击「生成 App 专用密码」\n4. 将密码填入本页面",
+  "emailGuideGeneric": "登录失败，可能的原因：\n\n1. 密码不正确 — 很多邮箱不允许直接使用登录密码，需要生成「授权码」或「应用专用密码」\n2. SMTP 服务未开启 — 请登录邮箱网页版，在设置中开启 SMTP 服务\n3. 登录频率限制 — 短时间内多次尝试可能被限制，请稍后重试\n\n建议去邮箱的「设置」页面查看 SMTP 相关选项。",
+  "purchaseFeatureCheckin": "签到守护",
+  "purchaseFeatureCheckinDesc": "手动 + 自动签到、连续天数统计",
+  "purchaseFeatureAlert": "三级预警",
+  "purchaseFeatureAlertDesc": "预警 → 超时邮件 → SOS 紧急邮件",
+  "purchaseFeatureLocation": "位置共享",
+  "purchaseFeatureLocationDesc": "GPS 定位，紧急时发送给联系人",
+  "purchaseFeatureMessage": "遗言留言",
+  "purchaseFeatureMessageDesc": "写下想说的话，紧急时随邮件发送",
+  "purchaseUnlocked": "已解锁全部功能",
+  "purchaseCurrentSlots": "当前名额：{current} 人（上限 {max}）",
+  "@purchaseCurrentSlots": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "purchaseAddContact": "增加 1 个联系人名额",
+  "noRecord": "无记录",
+  "emailUsingDefault": "使用默认邮箱发送",
+  "contactVerifyEmail": "验证邮箱",
+  "contactVerifying": "验证中...",
+  "contactVerifySuccess": "验证邮件已发送，请让联系人确认收件箱",
+  "contactVerifyFail": "发送失败，请检查邮箱地址是否正确"
+}

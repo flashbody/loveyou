@@ -1,0 +1,160 @@
+{
+  "@@locale": "es",
+  "appName": "LoveYou",
+  "checkinButton": "Te Quiero",
+  "checkinSuccess": "Registro exitoso ❤️",
+  "autoCheckinNotification": "Registro automático hoy ❤️",
+  "streakDays": "{count} días seguidos",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "welcomeTitle": "LoveYou te cuida",
+  "welcomeSubtitle": "Un \"Te Quiero\" al día mantiene tranquilos a quienes te aman",
+  "setupName": "Tu nombre",
+  "setupNameHint": "Ingresa tu nombre",
+  "setupContact": "Contacto de emergencia",
+  "setupContactName": "Nombre del contacto",
+  "setupContactEmail": "Email del contacto",
+  "setupDone": "Iniciar protección",
+  "settingsTitle": "Ajustes",
+  "settingsCheckinMode": "Modo de registro",
+  "settingsManualMode": "Manual",
+  "settingsAutoMode": "Automático",
+  "settingsCheckinInterval": "Intervalo de registro",
+  "settingsInterval24h": "Cada 24 horas",
+  "settingsInterval12h": "Cada 12 horas",
+  "settingsInactivityThreshold": "Alerta de inactividad",
+  "settingsInactivityHours": "{hours} horas",
+  "@settingsInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsLanguage": "Idioma",
+  "settingsAccessibility": "Modo accesible",
+  "settingsLastMessage": "Último mensaje",
+  "settingsContacts": "Contactos de emergencia",
+  "settingsPurchase": "Desbloquear funciones",
+  "contactsTitle": "Contactos de emergencia",
+  "contactsAdd": "Agregar contacto",
+  "contactsMax": "Hasta {max} contactos",
+  "@contactsMax": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsExtraCost": "Contacto extra €0.99 c/u",
+  "contactsDefault": "Predeterminado (1 incluido)",
+  "messageTitle": "Último mensaje",
+  "messageHint": "Escribe lo que quieras decirles...",
+  "messageSaved": "Guardado",
+  "purchaseTitle": "Desbloquear LoveYou",
+  "purchaseDescription": "Compra única, protección de por vida",
+  "purchasePrice": "€0.99",
+  "purchaseButton": "Desbloquear ahora",
+  "purchaseRestoreButton": "Restaurar compra",
+  "alertPreWarning": "Oye, ¿estás bien? Toca aquí ❤️",
+  "alertInactivityHours": "Sin actividad por {hours} horas",
+  "@alertInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "modeChangeNotice": "Modo de registro cambiado. Contactos de emergencia notificados.",
+  "thresholdChangeNotice": "Tiempo de alerta actualizado. Contactos de emergencia notificados.",
+  "locationUnavailable": "Ubicación no disponible",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "save": "Guardar",
+  "delete": "Eliminar",
+  "edit": "Editar",
+  "done": "Hecho",
+  "voiceListening": "Escuchando...",
+  "voiceCheckin": "Registro por voz",
+  "checkinReminderNotification": "No olvides registrarte hoy ❤️",
+  "contactDeleteConfirm": "¿Seguro que quieres eliminar este contacto?",
+  "messageDescription": "Cuando se active una alerta, este mensaje se enviará a tus contactos de emergencia por email.",
+  "emailSetupTitle": "Configuración de email",
+  "emailSetupHeading": "Configurar email de envío",
+  "emailSetupDescription": "Cuando no te registres a tiempo, la app usará este email para notificar a tus contactos de emergencia.",
+  "emailNotConfigured": "No configurado (no se pueden enviar emails)",
+  "emailSaved": "Configuración de email guardada",
+  "emailTestSuccess": "¡Email de prueba enviado! Revisa tu bandeja de entrada",
+  "emailProviderAuto": "Detección automática",
+  "emailProviderQQ": "QQ Mail",
+  "emailProvider163": "NetEase 163",
+  "emailProviderCustom": "SMTP personalizado",
+  "emailProviderLabel": "Proveedor de email",
+  "emailAddressLabel": "Dirección de email",
+  "emailAddressHint": "you@example.com",
+  "emailAddressRequired": "Ingresa tu email",
+  "emailAddressInvalid": "Formato de email inválido",
+  "emailPasswordLabel": "Contraseña / Código de autorización",
+  "emailPasswordHint": "Gmail: contraseña de app, QQ/163: código de auth",
+  "emailPasswordRequired": "Ingresa contraseña o código",
+  "emailSmtpHost": "Servidor SMTP",
+  "emailSmtpHostRequired": "Ingresa servidor SMTP",
+  "emailSmtpPort": "Puerto",
+  "emailTipTitle": "Consejos",
+  "emailTipContent": "• Gmail: Activa la verificación en 2 pasos y genera una \"Contraseña de aplicación\"\n• QQ Mail: Ajustes → Cuenta → Genera un \"Código de autorización\"\n• 163 Mail: Ajustes → POP3/SMTP → Activa y obtén el código\n• Las contraseñas se almacenan solo en tu dispositivo",
+  "emailSaveButton": "Guardar configuración",
+  "emailTestButton": "Enviar email de prueba",
+  "emailTesting": "Enviando...",
+  "emailErrorAuthTitle": "Error de autenticación",
+  "emailErrorNetworkTitle": "Error de conexión",
+  "emailErrorGenericTitle": "Error de envío",
+  "emailErrorGenericMsg": "Error: {error}",
+  "@emailErrorGenericMsg": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "emailErrorNetworkSteps": "1. Verifica tu conexión de red (Wi-Fi o datos móviles)\n2. Si usas VPN, intenta desactivarla\n3. Para SMTP personalizado, verifica la dirección y puerto\n4. Algunas redes bloquean los puertos 465/587",
+  "emailErrorGenericSteps": "Verifica:\n1. La dirección de email es correcta\n2. La contraseña/código es correcto\n3. La red funciona correctamente",
+  "emailErrorDismiss": "Entendido",
+  "emailGuideQQ": "❌ QQ/Foxmail requiere un \"Código de autorización\" en vez de tu contraseña\n\nPasos:\n1. Inicia sesión en mail.qq.com\n2. Ve a Ajustes → Cuenta\n3. Busca el servicio POP3/IMAP/SMTP\n4. Activa IMAP/SMTP (requiere verificación SMS)\n5. Haz clic en \"Generar código de autorización\"\n6. Ingresa el código de 16 dígitos arriba",
+  "emailGuide163": "❌ NetEase Mail requiere un \"Código de autorización\"\n\nPasos:\n1. Inicia sesión en mail.163.com\n2. Ve a Ajustes → POP3/SMTP/IMAP\n3. Activa el servicio IMAP/SMTP\n4. Sigue la verificación por SMS\n5. Ingresa el código de autorización arriba",
+  "emailGuideGmail": "❌ Gmail requiere una \"Contraseña de aplicación\"\n\nPasos:\n1. Ve a myaccount.google.com\n2. Seguridad → Verificación en 2 pasos (debe estar activada)\n3. Busca \"Contraseñas de aplicación\" al final\n4. Selecciona Correo → Genera contraseña\n5. Ingresa la contraseña de 16 dígitos arriba\n\n⚠️ Si no encuentras Contraseñas de aplicación, activa primero la verificación en 2 pasos",
+  "emailGuideOutlook": "❌ Outlook/Hotmail requiere una \"Contraseña de aplicación\"\n\nPasos:\n1. Ve a account.microsoft.com\n2. Seguridad → Opciones de seguridad avanzadas\n3. Activa la verificación en dos pasos\n4. Crea una nueva contraseña de aplicación\n5. Ingresa la contraseña generada arriba",
+  "emailGuideICloud": "❌ iCloud Mail requiere una \"Contraseña específica de app\"\n\nPasos:\n1. Ve a appleid.apple.com e inicia sesión\n2. Inicio de sesión y seguridad → Contraseñas específicas de app\n3. Haz clic en \"Generar una contraseña\"\n4. Ingresa la contraseña arriba",
+  "emailGuideGeneric": "Error de inicio de sesión. Posibles causas:\n\n1. Contraseña incorrecta — Muchos proveedores no permiten contraseñas de login para SMTP. Necesitas un \"Código de autorización\" o \"Contraseña de aplicación\"\n2. SMTP no activado — Inicia sesión en la web de tu email y activa SMTP en ajustes\n3. Límite de intentos — Demasiados intentos. Intenta más tarde\n\nConsulta los ajustes SMTP de tu proveedor.",
+  "purchaseFeatureCheckin": "Guardia de registro",
+  "purchaseFeatureCheckinDesc": "Registro manual + automático, racha de días",
+  "purchaseFeatureAlert": "Alerta de 3 niveles",
+  "purchaseFeatureAlertDesc": "Aviso → email de timeout → email SOS de emergencia",
+  "purchaseFeatureLocation": "Compartir ubicación",
+  "purchaseFeatureLocationDesc": "GPS, enviada a contactos en emergencias",
+  "purchaseFeatureMessage": "Último mensaje",
+  "purchaseFeatureMessageDesc": "Escribe tus palabras, enviadas con emails de emergencia",
+  "purchaseUnlocked": "Todas las funciones desbloqueadas",
+  "purchaseCurrentSlots": "Espacios actuales: {current} (máx {max})",
+  "@purchaseCurrentSlots": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "purchaseAddContact": "Agregar 1 espacio de contacto",
+  "noRecord": "Sin registro",
+  "emailUsingDefault": "Usando correo predeterminado",
+  "contactVerifyEmail": "Verificar correo",
+  "contactVerifying": "Verificando...",
+  "contactVerifySuccess": "Correo de verificación enviado, pide al contacto que revise su bandeja",
+  "contactVerifyFail": "Error al enviar, verifica la dirección de correo"
+}

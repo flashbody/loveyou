@@ -1,0 +1,31 @@
+---
+description: LoveYou 开发约定与踩坑记录
+globs: "**/*.dart"
+alwaysApply: false
+---
+
+# 开发约定
+
+## 状态栏样式
+- 不要在 `main.dart` 中用 `SystemChrome.setSystemUIOverlayStyle` 一次性设置
+- 在 `AppTheme` 的 `appBarTheme.systemOverlayStyle` 中声明（亮色用 `.dark`，暗色用 `.light`）
+- 无 `AppBar` 的页面用 `AnnotatedRegion<SystemUiOverlayStyle>` 包裹 `Scaffold`
+
+## 国际化（i18n）
+- ARB 文件中禁止使用中文引号 `""` → 改用 `「」`
+- ARB 文件中禁止使用德语引号 `„"` → 改用 `«»`
+- 有 `BuildContext` 的地方用 `AppLocalizations.of(context)!`
+- 无 `BuildContext` 的 Service 层（通知、邮件）用内部 `Map<String, String>` + `UserProfile.languageCode` 实现多语言
+
+## iOS 平台限制
+- 🇹🇼 旗帜 emoji 在中国大陆区域 iOS 设备上无法渲染，用 🇭🇰 或文字替代
+- CocoaPods 的 xcconfig 警告是 Flutter 已知问题，不影响编译
+
+## 邮件发送
+- 使用 `mailer` 包直连 SMTP，无后端依赖
+- `AlertEmailService` 使用 `_t()` + `_templates` Map 做邮件模板多语言
+- `NotificationService` 使用 `_langPrefix()` + 内部字典做通知文案多语言
+
+## 依赖管理
+- `flutter pub get` 在沙箱中可能因 Dart VM 崩溃需加 `required_permissions: ["all"]`
+- 移除依赖后记得运行 `pod install`（iOS）同步 Podfile.lock

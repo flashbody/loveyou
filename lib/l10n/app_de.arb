@@ -1,0 +1,160 @@
+{
+  "@@locale": "de",
+  "appName": "LoveYou",
+  "checkinButton": "Ich liebe dich",
+  "checkinSuccess": "Eingecheckt ❤️",
+  "autoCheckinNotification": "Heute automatisch eingecheckt ❤️",
+  "streakDays": "{count} Tage in Folge",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "welcomeTitle": "LoveYou wacht über dich",
+  "welcomeSubtitle": "Ein 'Ich liebe dich' am Tag gibt deinen Liebsten Sicherheit",
+  "setupName": "Dein Name",
+  "setupNameHint": "Gib deinen Namen ein",
+  "setupContact": "Notfallkontakt",
+  "setupContactName": "Name des Kontakts",
+  "setupContactEmail": "E-Mail des Kontakts",
+  "setupDone": "Schutz starten",
+  "settingsTitle": "Einstellungen",
+  "settingsCheckinMode": "Check-in-Modus",
+  "settingsManualMode": "Manuell",
+  "settingsAutoMode": "Automatisch",
+  "settingsCheckinInterval": "Check-in-Intervall",
+  "settingsInterval24h": "Alle 24 Stunden",
+  "settingsInterval12h": "Alle 12 Stunden",
+  "settingsInactivityThreshold": "Inaktivitätswarnung",
+  "settingsInactivityHours": "{hours} Stunden",
+  "@settingsInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsLanguage": "Sprache",
+  "settingsAccessibility": "Barrierefreiheit",
+  "settingsLastMessage": "Letzte Nachricht",
+  "settingsContacts": "Notfallkontakte",
+  "settingsPurchase": "Funktionen freischalten",
+  "contactsTitle": "Notfallkontakte",
+  "contactsAdd": "Kontakt hinzufügen",
+  "contactsMax": "Bis zu {max} Kontakte",
+  "@contactsMax": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsExtraCost": "Zusätzlicher Kontakt 0,99 € pro Stück",
+  "contactsDefault": "Standard (1 inklusive)",
+  "messageTitle": "Letzte Nachricht",
+  "messageHint": "Schreibe, was du ihnen sagen möchtest...",
+  "messageSaved": "Gespeichert",
+  "purchaseTitle": "LoveYou freischalten",
+  "purchaseDescription": "Einmaliger Kauf, lebenslanger Schutz",
+  "purchasePrice": "0,99 €",
+  "purchaseButton": "Jetzt freischalten",
+  "purchaseRestoreButton": "Kauf wiederherstellen",
+  "alertPreWarning": "Hey, alles okay? Tippe hier ❤️",
+  "alertInactivityHours": "Keine Aktivität seit {hours} Stunden",
+  "@alertInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "modeChangeNotice": "Modus geändert. Notfallkontakte benachrichtigt.",
+  "thresholdChangeNotice": "Alarmzeit aktualisiert. Kontakte benachrichtigt.",
+  "locationUnavailable": "Standort nicht verfügbar",
+  "cancel": "Abbrechen",
+  "confirm": "Bestätigen",
+  "save": "Speichern",
+  "delete": "Löschen",
+  "edit": "Bearbeiten",
+  "done": "Fertig",
+  "voiceListening": "Zuhören...",
+  "voiceCheckin": "Sprach-Check-in",
+  "checkinReminderNotification": "Vergiss nicht, dich heute einzuchecken ❤️",
+  "contactDeleteConfirm": "Möchten Sie diesen Kontakt wirklich löschen?",
+  "messageDescription": "Wenn ein Alarm ausgelöst wird, wird diese Nachricht per E-Mail an Ihre Notfallkontakte gesendet.",
+  "emailSetupTitle": "E-Mail-Einrichtung",
+  "emailSetupHeading": "Absender-E-Mail konfigurieren",
+  "emailSetupDescription": "Wenn Sie sich nicht rechtzeitig einchecken, verwendet die App diese E-Mail, um Ihre Notfallkontakte zu benachrichtigen.",
+  "emailNotConfigured": "Nicht konfiguriert (E-Mails können nicht gesendet werden)",
+  "emailSaved": "E-Mail-Konfiguration gespeichert",
+  "emailTestSuccess": "Test-E-Mail gesendet! Überprüfen Sie Ihren Posteingang",
+  "emailProviderAuto": "Automatische Erkennung",
+  "emailProviderQQ": "QQ Mail",
+  "emailProvider163": "NetEase 163",
+  "emailProviderCustom": "Benutzerdefiniertes SMTP",
+  "emailProviderLabel": "E-Mail-Anbieter",
+  "emailAddressLabel": "E-Mail-Adresse",
+  "emailAddressHint": "you@example.com",
+  "emailAddressRequired": "Bitte E-Mail eingeben",
+  "emailAddressInvalid": "Ungültiges E-Mail-Format",
+  "emailPasswordLabel": "Passwort / Autorisierungscode",
+  "emailPasswordHint": "Gmail: App-Passwort, QQ/163: Autorisierungscode",
+  "emailPasswordRequired": "Bitte Passwort oder Code eingeben",
+  "emailSmtpHost": "SMTP-Server",
+  "emailSmtpHostRequired": "Bitte SMTP-Server eingeben",
+  "emailSmtpPort": "Port",
+  "emailTipTitle": "Tipps",
+  "emailTipContent": "• Gmail: Aktivieren Sie die 2-Schritt-Verifizierung und erstellen Sie ein «App-Passwort»\n• QQ Mail: Einstellungen → Konto → «Autorisierungscode» generieren\n• 163 Mail: Einstellungen → POP3/SMTP → Aktivieren und Code erhalten\n• Passwörter werden nur auf Ihrem Gerät gespeichert",
+  "emailSaveButton": "Konfiguration speichern",
+  "emailTestButton": "Test-E-Mail senden",
+  "emailTesting": "Wird gesendet...",
+  "emailErrorAuthTitle": "Authentifizierung fehlgeschlagen",
+  "emailErrorNetworkTitle": "Netzwerkverbindung fehlgeschlagen",
+  "emailErrorGenericTitle": "Senden fehlgeschlagen",
+  "emailErrorGenericMsg": "Fehler: {error}",
+  "@emailErrorGenericMsg": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "emailErrorNetworkSteps": "1. Überprüfen Sie Ihre Netzwerkverbindung (WLAN oder mobile Daten)\n2. Falls Sie ein VPN verwenden, versuchen Sie es zu deaktivieren\n3. Bei benutzerdefiniertem SMTP überprüfen Sie Serveradresse und Port\n4. Einige Netzwerke blockieren die Ports 465/587, versuchen Sie zu wechseln",
+  "emailErrorGenericSteps": "Überprüfen Sie:\n1. Ist die E-Mail-Adresse korrekt\n2. Ist das Passwort/der Code korrekt\n3. Funktioniert das Netzwerk einwandfrei",
+  "emailErrorDismiss": "Verstanden",
+  "emailGuideQQ": "❌ QQ/Foxmail erfordert einen «Autorisierungscode» anstelle Ihres Passworts\n\nSchritte:\n1. Melden Sie sich bei mail.qq.com an\n2. Gehen Sie zu Einstellungen → Konto\n3. Suchen Sie den POP3/IMAP/SMTP-Dienst\n4. Aktivieren Sie IMAP/SMTP (SMS-Verifizierung erforderlich)\n5. Klicken Sie auf «Autorisierungscode generieren»\n6. Geben Sie den 16-stelligen Code oben ein",
+  "emailGuide163": "❌ NetEase Mail erfordert einen «Autorisierungscode»\n\nSchritte:\n1. Melden Sie sich bei mail.163.com an\n2. Gehen Sie zu Einstellungen → POP3/SMTP/IMAP\n3. Aktivieren Sie den IMAP/SMTP-Dienst\n4. Folgen Sie der SMS-Verifizierung\n5. Geben Sie den Autorisierungscode oben ein",
+  "emailGuideGmail": "❌ Gmail erfordert ein «App-Passwort»\n\nSchritte:\n1. Gehen Sie zu myaccount.google.com\n2. Sicherheit → 2-Schritt-Verifizierung (muss aktiviert sein)\n3. Suchen Sie «App-Passwörter» unten auf der Seite\n4. Wählen Sie E-Mail → Passwort generieren\n5. Geben Sie das 16-stellige Passwort oben ein\n\n⚠️ Falls Sie «App-Passwörter» nicht finden, aktivieren Sie zuerst die 2-Schritt-Verifizierung",
+  "emailGuideOutlook": "❌ Outlook/Hotmail erfordert ein «App-Passwort»\n\nSchritte:\n1. Gehen Sie zu account.microsoft.com\n2. Sicherheit → Erweiterte Sicherheitsoptionen\n3. Aktivieren Sie die Zwei-Schritt-Verifizierung\n4. Erstellen Sie ein neues App-Passwort\n5. Geben Sie das generierte Passwort oben ein",
+  "emailGuideICloud": "❌ iCloud Mail erfordert ein «App-spezifisches Passwort»\n\nSchritte:\n1. Gehen Sie zu appleid.apple.com und melden Sie sich an\n2. Anmeldung und Sicherheit → App-spezifische Passwörter\n3. Klicken Sie auf «Passwort generieren»\n4. Geben Sie das Passwort oben ein",
+  "emailGuideGeneric": "Anmeldung fehlgeschlagen. Mögliche Ursachen:\n\n1. Falsches Passwort — Viele Anbieter erlauben kein Login-Passwort für SMTP. Sie benötigen einen «Autorisierungscode» oder ein «App-Passwort»\n2. SMTP nicht aktiviert — Melden Sie sich bei der Webversion Ihrer E-Mail an und aktivieren Sie SMTP in den Einstellungen\n3. Versuchslimit — Zu viele Versuche. Versuchen Sie es später erneut\n\nÜberprüfen Sie die SMTP-Einstellungen Ihres Anbieters.",
+  "purchaseFeatureCheckin": "Check-in-Schutz",
+  "purchaseFeatureCheckinDesc": "Manuelles + automatisches Check-in, Tagessträhne",
+  "purchaseFeatureAlert": "3-Stufen-Alarm",
+  "purchaseFeatureAlertDesc": "Warnung → Timeout-E-Mail → SOS-Notfall-E-Mail",
+  "purchaseFeatureLocation": "Standort teilen",
+  "purchaseFeatureLocationDesc": "GPS, wird bei Notfällen an Kontakte gesendet",
+  "purchaseFeatureMessage": "Letzte Nachricht",
+  "purchaseFeatureMessageDesc": "Schreiben Sie Ihre Worte, gesendet mit Notfall-E-Mails",
+  "purchaseUnlocked": "Alle Funktionen freigeschaltet",
+  "purchaseCurrentSlots": "Aktuelle Plätze: {current} (max {max})",
+  "@purchaseCurrentSlots": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "purchaseAddContact": "1 Kontaktplatz hinzufügen",
+  "noRecord": "Kein Eintrag",
+  "emailUsingDefault": "Standard-E-Mail wird verwendet",
+  "contactVerifyEmail": "E-Mail verifizieren",
+  "contactVerifying": "Wird verifiziert...",
+  "contactVerifySuccess": "Verifizierungs-E-Mail gesendet, bitte Kontakt bitten, Posteingang zu prüfen",
+  "contactVerifyFail": "Senden fehlgeschlagen, bitte E-Mail-Adresse überprüfen"
+}

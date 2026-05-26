@@ -1,0 +1,160 @@
+{
+  "@@locale": "ja",
+  "appName": "LoveYou",
+  "checkinButton": "愛してる",
+  "checkinSuccess": "チェックイン完了 ❤️",
+  "autoCheckinNotification": "今日は自動チェックインしました ❤️",
+  "streakDays": "連続 {count} 日",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "welcomeTitle": "LoveYou があなたを見守ります",
+  "welcomeSubtitle": "毎日の「愛してる」で、大切な人に安心を",
+  "setupName": "あなたの名前",
+  "setupNameHint": "名前を入力してください",
+  "setupContact": "緊急連絡先",
+  "setupContactName": "連絡先の名前",
+  "setupContactEmail": "連絡先のメール",
+  "setupDone": "見守りを開始",
+  "settingsTitle": "設定",
+  "settingsCheckinMode": "チェックインモード",
+  "settingsManualMode": "手動",
+  "settingsAutoMode": "自動",
+  "settingsCheckinInterval": "チェックイン間隔",
+  "settingsInterval24h": "24時間ごと",
+  "settingsInterval12h": "12時間ごと",
+  "settingsInactivityThreshold": "非活動アラート",
+  "settingsInactivityHours": "{hours} 時間",
+  "@settingsInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsLanguage": "言語",
+  "settingsAccessibility": "ケアモード",
+  "settingsLastMessage": "最後のメッセージ",
+  "settingsContacts": "緊急連絡先",
+  "settingsPurchase": "機能をアンロック",
+  "contactsTitle": "緊急連絡先",
+  "contactsAdd": "連絡先を追加",
+  "contactsMax": "最大 {max} 人",
+  "@contactsMax": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "contactsExtraCost": "追加連絡先 ¥160/人",
+  "contactsDefault": "デフォルト（1人含む）",
+  "messageTitle": "最後のメッセージ",
+  "messageHint": "伝えたい言葉を書いてください...",
+  "messageSaved": "保存しました",
+  "purchaseTitle": "LoveYou をアンロック",
+  "purchaseDescription": "一度の購入で、一生の見守り",
+  "purchasePrice": "¥160",
+  "purchaseButton": "今すぐアンロック",
+  "purchaseRestoreButton": "購入を復元",
+  "alertPreWarning": "大丈夫？ここをタップ ❤️",
+  "alertInactivityHours": "{hours} 時間活動がありません",
+  "@alertInactivityHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "modeChangeNotice": "モードが変更されました。緊急連絡先に通知しました。",
+  "thresholdChangeNotice": "アラート時間を更新しました。連絡先に通知しました。",
+  "locationUnavailable": "位置情報が利用できません",
+  "cancel": "キャンセル",
+  "confirm": "確認",
+  "save": "保存",
+  "delete": "削除",
+  "edit": "編集",
+  "done": "完了",
+  "voiceListening": "聞き取り中...",
+  "voiceCheckin": "音声チェックイン",
+  "checkinReminderNotification": "今日のチェックインを忘れずに ❤️",
+  "contactDeleteConfirm": "この連絡先を削除してもよろしいですか？",
+  "messageDescription": "アラートが発動されると、このメッセージがメールで緊急連絡先に送信されます。",
+  "emailSetupTitle": "メール設定",
+  "emailSetupHeading": "送信メールの設定",
+  "emailSetupDescription": "チェックインを忘れた場合、アプリはこのメールを使って緊急連絡先に通知します。",
+  "emailNotConfigured": "未設定（メールを送信できません）",
+  "emailSaved": "メール設定を保存しました",
+  "emailTestSuccess": "テストメールを送信しました！受信トレイを確認してください",
+  "emailProviderAuto": "自動検出",
+  "emailProviderQQ": "QQメール",
+  "emailProvider163": "NetEase 163",
+  "emailProviderCustom": "カスタムSMTP",
+  "emailProviderLabel": "メールプロバイダー",
+  "emailAddressLabel": "メールアドレス",
+  "emailAddressHint": "you@example.com",
+  "emailAddressRequired": "メールアドレスを入力してください",
+  "emailAddressInvalid": "メールアドレスの形式が無効です",
+  "emailPasswordLabel": "パスワード / 認証コード",
+  "emailPasswordHint": "Gmail: アプリパスワード、QQ/163: 認証コード",
+  "emailPasswordRequired": "パスワードまたは認証コードを入力してください",
+  "emailSmtpHost": "SMTPサーバー",
+  "emailSmtpHostRequired": "SMTPサーバーを入力してください",
+  "emailSmtpPort": "ポート",
+  "emailTipTitle": "ヒント",
+  "emailTipContent": "• Gmail: 2段階認証を有効にし、アプリパスワードを生成\n• QQメール: 設定 → アカウント → 認証コードを生成\n• 163メール: 設定 → POP3/SMTP → 有効にしてコードを取得\n• パスワードはデバイスのローカルにのみ保存されます",
+  "emailSaveButton": "設定を保存",
+  "emailTestButton": "テストメールを送信",
+  "emailTesting": "送信中...",
+  "emailErrorAuthTitle": "認証に失敗しました",
+  "emailErrorNetworkTitle": "ネットワーク接続に失敗しました",
+  "emailErrorGenericTitle": "送信に失敗しました",
+  "emailErrorGenericMsg": "エラー: {error}",
+  "@emailErrorGenericMsg": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "emailErrorNetworkSteps": "1. ネットワーク接続を確認してください（Wi-Fiまたはモバイルデータ）\n2. VPNを使用している場合は、オフにしてみてください\n3. カスタムSMTPの場合、サーバーアドレスとポートを確認してください\n4. 一部のネットワークではポート465/587がブロックされています。切り替えてみてください",
+  "emailErrorGenericSteps": "以下を確認してください：\n1. メールアドレスが正しいか\n2. パスワード/認証コードが正しいか\n3. ネットワークが正常か",
+  "emailErrorDismiss": "OK",
+  "emailGuideQQ": "❌ QQ/Foxmailはログインパスワードではなく認証コードが必要です\n\n手順：\n1. mail.qq.comにログイン\n2. 設定 → アカウントに移動\n3. POP3/IMAP/SMTPサービスを見つける\n4. IMAP/SMTPを有効にする（SMS認証が必要）\n5. 認証コードを生成をクリック\n6. 上のパスワード欄に16桁のコードを入力",
+  "emailGuide163": "❌ NetEaseメールは認証コードが必要です\n\n手順：\n1. mail.163.comにログイン\n2. 設定 → POP3/SMTP/IMAPに移動\n3. IMAP/SMTPサービスを有効にする\n4. SMS認証の手順に従う\n5. 上のパスワード欄に認証コードを入力",
+  "emailGuideGmail": "❌ Gmailはアプリパスワードが必要です\n\n手順：\n1. myaccount.google.comにアクセス\n2. セキュリティ → 2段階認証（有効にする必要があります）\n3. 下部のアプリパスワードを見つける\n4. メール → パスワードを生成を選択\n5. 上に16桁のパスワードを入力\n\n⚠️ アプリパスワードが見つからない場合は、まず2段階認証を有効にしてください",
+  "emailGuideOutlook": "❌ Outlook/Hotmailはアプリパスワードが必要です\n\n手順：\n1. account.microsoft.comにアクセス\n2. セキュリティ → 高度なセキュリティオプション\n3. 2段階認証を有効にする\n4. 新しいアプリパスワードを作成\n5. 上に生成されたパスワードを入力",
+  "emailGuideICloud": "❌ iCloudメールはApp用パスワードが必要です\n\n手順：\n1. appleid.apple.comにアクセスしてサインイン\n2. サインインとセキュリティ → App用パスワード\n3. App用パスワードを生成をクリック\n4. 上にパスワードを入力",
+  "emailGuideGeneric": "ログインに失敗しました。考えられる原因：\n\n1. パスワードが間違っている — 多くのプロバイダーはSMTPにログインパスワードを使用できません。認証コードまたはアプリパスワードが必要な場合があります\n2. SMTPが有効でない — メールのWeb画面にログインしてSMTPを有効にしてください\n3. レート制限 — 試行回数が多すぎます。しばらくしてから再試行してください\n\nメールプロバイダーのSMTP設定を確認してください。",
+  "purchaseFeatureCheckin": "チェックインガード",
+  "purchaseFeatureCheckinDesc": "手動 + 自動チェックイン、連続記録の追跡",
+  "purchaseFeatureAlert": "3段階アラート",
+  "purchaseFeatureAlertDesc": "警告 → タイムアウトメール → SOS緊急メール",
+  "purchaseFeatureLocation": "位置情報の共有",
+  "purchaseFeatureLocationDesc": "GPS位置情報、緊急時に連絡先に送信",
+  "purchaseFeatureMessage": "最後のメッセージ",
+  "purchaseFeatureMessageDesc": "あなたの言葉を書いて、緊急メールと一緒に送信",
+  "purchaseUnlocked": "すべての機能がアンロックされました",
+  "purchaseCurrentSlots": "現在の枠: {current}（最大 {max}）",
+  "@purchaseCurrentSlots": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "purchaseAddContact": "連絡先枠を1つ追加",
+  "noRecord": "記録なし",
+  "emailUsingDefault": "デフォルトメールを使用中",
+  "contactVerifyEmail": "メールを確認",
+  "contactVerifying": "確認中...",
+  "contactVerifySuccess": "確認メールを送信しました。連絡先に受信箱を確認してもらってください",
+  "contactVerifyFail": "送信に失敗しました。メールアドレスを確認してください"
+}

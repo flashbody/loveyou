@@ -1,0 +1,80 @@
+---
+description: LoveYou 技术栈与架构规范
+globs: "**/*.dart"
+alwaysApply: true
+---
+
+# 技术栈
+
+## 前端框架
+- **Flutter** (Dart) — iOS + Android 双端同步
+- 最低版本：iOS 15+ / Android API 26+
+
+## 本地存储
+- **Hive** 或 **shared_preferences** — 用户资料、签到记录、遗言
+- **SQLite (drift)** — 如需复杂查询（联系人管理、签到历史）
+
+## 后台服务
+- 邮件发送：轻量后端（Cloud Functions / Supabase Edge Functions）
+- IAP 验证：服务端验证 Apple/Google 收据
+- 不存储用户数据，仅中转邮件发送请求
+
+## 运动检测
+- iOS: `CMMotionActivityManager` via `flutter_activity_recognition`
+- Android: `ActivityRecognitionClient` via 同一插件
+- 后台任务: `workmanager` 或 `flutter_background_service`
+
+## 定位
+- `geolocator` 插件 — 每 4 小时后台获取一次 GPS
+- `geocoding` 插件 — GPS 坐标转文字地址
+- 后台定位需 `background_location` 权限
+
+## 邮件服务
+- **`mailer` 包** — 客户端直连 SMTP 发送邮件，无后端
+- 支持 Gmail、QQ、163、Outlook、iCloud 等常见邮箱自动检测
+- 用户需在设置中配置 SMTP 邮箱才能发送预警邮件
+- `AlertEmailService` 内部使用 `_t()` 方法和 `_templates` Map 实现多语言邮件模板
+
+## IAP 支付
+- `in_app_purchase` 官方插件
+- 非消耗型商品：买断解锁 + 额外联系人
+- 服务端验证收据
+
+## 推送通知
+- `flutter_local_notifications` — 本地预警推送
+- 无需远程推送（所有通知由本地触发）
+
+## 国际化
+- `flutter_localizations` + `intl` — 官方 i18n 方案
+- ARB 文件管理翻译文案，基准语言为 `zh_CN`
+- 首发 P0 语言：简体中文、繁体中文、英语
+- 支持 RTL 布局（阿拉伯语）
+
+## 项目结构约定
+```
+lib/
+  main.dart
+  app/                  # App 入口、路由、主题
+  l10n/                 # 国际化 ARB 翻译文件
+    app_zh_CN.arb
+    app_zh_TW.arb
+    app_en.arb
+    app_ja.arb
+    ...
+  features/
+    checkin/            # 签到功能
+    contacts/           # 紧急联系人管理
+    alert/              # 预警与通知系统
+    location/           # 位置采集
+    message/            # 遗言功能
+    settings/           # 设置（模式切换、阈值配置、语言切换）
+    payment/            # IAP 支付
+    # auth/ 已移除（无账号系统）
+  core/
+    services/           # 后台服务（运动检测、定位、邮件）
+    storage/            # 本地存储封装
+    models/             # 数据模型
+    utils/              # 工具函数
+    constants/          # 常量
+    theme/              # 主题（常规 + 适老化）
+```
