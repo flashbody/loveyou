@@ -105,7 +105,9 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => '追加連絡先 ¥160/人';
+  String contactsExtraCost(String price) {
+    return '追加連絡先 $price/人';
+  }
 
   @override
   String get contactsDefault => 'デフォルト（1人含む）';
@@ -126,10 +128,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get purchaseDescription => '一度の購入で、一生の見守り';
 
   @override
-  String get purchasePrice => '¥160';
-
-  @override
-  String get purchaseButton => '今すぐアンロック';
+  String purchaseButton(String price) {
+    return '今すぐアンロック ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => '購入を復元';
@@ -364,4 +365,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get contactVerifyFail => '送信に失敗しました。メールアドレスを確認してください';
+
+  @override
+  String get paywallTitle => '機能がロックされています';
+
+  @override
+  String get paywallMessage => 'この機能はご購入後に有効になります。今すぐロック解除して全機能を有効にしましょう。';
+
+  @override
+  String get paywallUnlock => 'ロック解除';
+
+  @override
+  String get paywallContactTitle => '連絡先枠が一杯です';
+
+  @override
+  String get paywallContactMessage => '無料枠を使い切りました。追加枠を購入して連絡先を追加できます。';
 }

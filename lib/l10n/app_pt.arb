@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "Contato extra R$4,90 cada",
+  "contactsExtraCost": "Contato extra {price} cada",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "Padrão (1 incluído)",
   "messageTitle": "Última mensagem",
   "messageHint": "Escreva o que quer dizer a eles...",
   "messageSaved": "Salvo",
   "purchaseTitle": "Desbloquear LoveYou",
   "purchaseDescription": "Compra única, proteção vitalícia",
-  "purchasePrice": "R$4,90",
-  "purchaseButton": "Desbloquear agora",
+  "purchaseButton": "Desbloquear agora ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "Restaurar compra",
   "alertPreWarning": "Ei, tudo bem? Toque aqui ❤️",
   "alertInactivityHours": "Sem atividade por {hours} horas",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "Verificar email",
   "contactVerifying": "Verificando...",
   "contactVerifySuccess": "Email de verificação enviado, peça ao contato para verificar a caixa de entrada",
-  "contactVerifyFail": "Falha ao enviar, verifique o endereço de email"
+  "contactVerifyFail": "Falha ao enviar, verifique o endereço de email",
+  "paywallTitle": "Recurso bloqueado",
+  "paywallMessage": "Este recurso requer uma compra para ser ativado. Desbloqueie agora para ativar a proteção completa.",
+  "paywallUnlock": "Desbloquear",
+  "paywallContactTitle": "Vagas de contato esgotadas",
+  "paywallContactMessage": "Todas as vagas gratuitas foram usadas. Compre vagas adicionais para adicionar mais contatos."
 }

@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "额外联系人 ¥1.99/人",
+  "contactsExtraCost": "额外联系人 {price}/人",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "默认（含 1 人）",
   "messageTitle": "遗言 / 留言",
   "messageHint": "写下你想对 TA 说的话...",
   "messageSaved": "已保存",
   "purchaseTitle": "解锁 LoveYou",
   "purchaseDescription": "一次买断，终身守护",
-  "purchasePrice": "¥8.00",
-  "purchaseButton": "立即解锁",
+  "purchaseButton": "立即解锁 ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "恢复购买",
   "alertPreWarning": "嘿，你还好吗？点一下 ❤️",
   "alertInactivityHours": "已超过 {hours} 小时未活动",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "验证邮箱",
   "contactVerifying": "验证中...",
   "contactVerifySuccess": "验证邮件已发送，请让联系人确认收件箱",
-  "contactVerifyFail": "发送失败，请检查邮箱地址是否正确"
+  "contactVerifyFail": "发送失败，请检查邮箱地址是否正确",
+  "paywallTitle": "功能未解锁",
+  "paywallMessage": "此功能需要购买后才能生效。立即解锁以激活全部守护功能。",
+  "paywallUnlock": "去解锁",
+  "paywallContactTitle": "联系人名额已满",
+  "paywallContactMessage": "免费名额已用完，购买额外名额以添加更多联系人。"
 }

@@ -106,7 +106,9 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => 'Extra contact \$0.99 each';
+  String contactsExtraCost(String price) {
+    return 'Extra contact $price each';
+  }
 
   @override
   String get contactsDefault => 'Default (1 included)';
@@ -127,10 +129,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get purchaseDescription => 'One-time purchase, lifetime protection';
 
   @override
-  String get purchasePrice => '\$0.99';
-
-  @override
-  String get purchaseButton => 'Unlock Now';
+  String purchaseButton(String price) {
+    return 'Unlock Now ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => 'Restore Purchase';
@@ -378,4 +379,21 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get contactVerifyFail =>
       'Failed to send, please check the email address';
+
+  @override
+  String get paywallTitle => 'Feature Locked';
+
+  @override
+  String get paywallMessage =>
+      'This feature requires purchase to take effect. Unlock now to activate full protection.';
+
+  @override
+  String get paywallUnlock => 'Unlock Now';
+
+  @override
+  String get paywallContactTitle => 'Contact Slots Full';
+
+  @override
+  String get paywallContactMessage =>
+      'You\'ve used all free contact slots. Purchase extra slots to add more contacts.';
 }

@@ -106,7 +106,9 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => 'Contact supplémentaire 0,99 € chacun';
+  String contactsExtraCost(String price) {
+    return 'Contact supplémentaire $price chacun';
+  }
 
   @override
   String get contactsDefault => 'Par défaut (1 inclus)';
@@ -127,10 +129,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get purchaseDescription => 'Achat unique, protection à vie';
 
   @override
-  String get purchasePrice => '0,99 €';
-
-  @override
-  String get purchaseButton => 'Débloquer';
+  String purchaseButton(String price) {
+    return 'Débloquer ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => 'Restaurer l\'achat';
@@ -380,4 +381,21 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get contactVerifyFail =>
       'Échec de l\'envoi, vérifiez l\'adresse email';
+
+  @override
+  String get paywallTitle => 'Fonctionnalité verrouillée';
+
+  @override
+  String get paywallMessage =>
+      'Cette fonctionnalité nécessite un achat pour être activée. Déverrouillez maintenant pour activer la protection complète.';
+
+  @override
+  String get paywallUnlock => 'Déverrouiller';
+
+  @override
+  String get paywallContactTitle => 'Places de contact pleines';
+
+  @override
+  String get paywallContactMessage =>
+      'Vos places gratuites sont épuisées. Achetez des places supplémentaires pour ajouter plus de contacts.';
 }

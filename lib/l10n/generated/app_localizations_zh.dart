@@ -105,7 +105,9 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => '额外联系人 ¥1.99/人';
+  String contactsExtraCost(String price) {
+    return '额外联系人 $price/人';
+  }
 
   @override
   String get contactsDefault => '默认（含 1 人）';
@@ -126,10 +128,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get purchaseDescription => '一次买断，终身守护';
 
   @override
-  String get purchasePrice => '¥8.00';
-
-  @override
-  String get purchaseButton => '立即解锁';
+  String purchaseButton(String price) {
+    return '立即解锁 ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => '恢复购买';
@@ -364,6 +365,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get contactVerifyFail => '发送失败，请检查邮箱地址是否正确';
+
+  @override
+  String get paywallTitle => '功能未解锁';
+
+  @override
+  String get paywallMessage => '此功能需要购买后才能生效。立即解锁以激活全部守护功能。';
+
+  @override
+  String get paywallUnlock => '去解锁';
+
+  @override
+  String get paywallContactTitle => '联系人名额已满';
+
+  @override
+  String get paywallContactMessage => '免费名额已用完，购买额外名额以添加更多联系人。';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -467,7 +483,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   }
 
   @override
-  String get contactsExtraCost => '额外联系人 ¥1.99/人';
+  String contactsExtraCost(String price) {
+    return '额外联系人 $price/人';
+  }
 
   @override
   String get contactsDefault => '默认（含 1 人）';
@@ -488,10 +506,9 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get purchaseDescription => '一次买断，终身守护';
 
   @override
-  String get purchasePrice => '¥8.00';
-
-  @override
-  String get purchaseButton => '立即解锁';
+  String purchaseButton(String price) {
+    return '立即解锁 ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => '恢复购买';
@@ -726,6 +743,21 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get contactVerifyFail => '发送失败，请检查邮箱地址是否正确';
+
+  @override
+  String get paywallTitle => '功能未解锁';
+
+  @override
+  String get paywallMessage => '此功能需要购买后才能生效。立即解锁以激活全部守护功能。';
+
+  @override
+  String get paywallUnlock => '去解锁';
+
+  @override
+  String get paywallContactTitle => '联系人名额已满';
+
+  @override
+  String get paywallContactMessage => '免费名额已用完，购买额外名额以添加更多联系人。';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -829,7 +861,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   }
 
   @override
-  String get contactsExtraCost => '額外聯絡人 NT\$30/人';
+  String contactsExtraCost(String price) {
+    return '額外聯絡人 $price/人';
+  }
 
   @override
   String get contactsDefault => '預設（含 1 人）';
@@ -850,10 +884,9 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get purchaseDescription => '一次買斷，終身守護';
 
   @override
-  String get purchasePrice => 'NT\$30';
-
-  @override
-  String get purchaseButton => '立即解鎖';
+  String purchaseButton(String price) {
+    return '立即解鎖 ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => '恢復購買';
@@ -1088,4 +1121,19 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get contactVerifyFail => '發送失敗，請檢查信箱地址是否正確';
+
+  @override
+  String get paywallTitle => '功能未解鎖';
+
+  @override
+  String get paywallMessage => '此功能需要購買後才能生效。立即解鎖以啟動全部守護功能。';
+
+  @override
+  String get paywallUnlock => '去解鎖';
+
+  @override
+  String get paywallContactTitle => '聯絡人名額已滿';
+
+  @override
+  String get paywallContactMessage => '免費名額已用完，購買額外名額以新增更多聯絡人。';
 }

@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "추가 연락처 ₩1,500/명",
+  "contactsExtraCost": "추가 연락처 {price}/명",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "기본 (1명 포함)",
   "messageTitle": "마지막 메시지",
   "messageHint": "전하고 싶은 말을 적어주세요...",
   "messageSaved": "저장됨",
   "purchaseTitle": "LoveYou 잠금 해제",
   "purchaseDescription": "한 번 구매, 평생 보호",
-  "purchasePrice": "₩1,500",
-  "purchaseButton": "지금 잠금 해제",
+  "purchaseButton": "지금 잠금 해제 ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "구매 복원",
   "alertPreWarning": "괜찮아요? 여기를 탭하세요 ❤️",
   "alertInactivityHours": "{hours}시간 동안 활동 없음",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "이메일 확인",
   "contactVerifying": "확인 중...",
   "contactVerifySuccess": "확인 이메일이 전송되었습니다. 연락처에게 수신함을 확인하도록 요청하세요",
-  "contactVerifyFail": "전송 실패, 이메일 주소를 확인해 주세요"
+  "contactVerifyFail": "전송 실패, 이메일 주소를 확인해 주세요",
+  "paywallTitle": "기능 잠김",
+  "paywallMessage": "이 기능은 구매 후 활성화됩니다. 지금 잠금 해제하여 모든 보호 기능을 활성화하세요.",
+  "paywallUnlock": "잠금 해제",
+  "paywallContactTitle": "연락처 슬롯 부족",
+  "paywallContactMessage": "무료 슬롯을 모두 사용했습니다. 추가 슬롯을 구매하여 연락처를 더 추가하세요."
 }

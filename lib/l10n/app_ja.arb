@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "追加連絡先 ¥160/人",
+  "contactsExtraCost": "追加連絡先 {price}/人",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "デフォルト（1人含む）",
   "messageTitle": "最後のメッセージ",
   "messageHint": "伝えたい言葉を書いてください...",
   "messageSaved": "保存しました",
   "purchaseTitle": "LoveYou をアンロック",
   "purchaseDescription": "一度の購入で、一生の見守り",
-  "purchasePrice": "¥160",
-  "purchaseButton": "今すぐアンロック",
+  "purchaseButton": "今すぐアンロック ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "購入を復元",
   "alertPreWarning": "大丈夫？ここをタップ ❤️",
   "alertInactivityHours": "{hours} 時間活動がありません",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "メールを確認",
   "contactVerifying": "確認中...",
   "contactVerifySuccess": "確認メールを送信しました。連絡先に受信箱を確認してもらってください",
-  "contactVerifyFail": "送信に失敗しました。メールアドレスを確認してください"
+  "contactVerifyFail": "送信に失敗しました。メールアドレスを確認してください",
+  "paywallTitle": "機能がロックされています",
+  "paywallMessage": "この機能はご購入後に有効になります。今すぐロック解除して全機能を有効にしましょう。",
+  "paywallUnlock": "ロック解除",
+  "paywallContactTitle": "連絡先枠が一杯です",
+  "paywallContactMessage": "無料枠を使い切りました。追加枠を購入して連絡先を追加できます。"
 }

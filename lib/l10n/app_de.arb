@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "Zusätzlicher Kontakt 0,99 € pro Stück",
+  "contactsExtraCost": "Zusätzlicher Kontakt {price} pro Stück",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "Standard (1 inklusive)",
   "messageTitle": "Letzte Nachricht",
   "messageHint": "Schreibe, was du ihnen sagen möchtest...",
   "messageSaved": "Gespeichert",
   "purchaseTitle": "LoveYou freischalten",
   "purchaseDescription": "Einmaliger Kauf, lebenslanger Schutz",
-  "purchasePrice": "0,99 €",
-  "purchaseButton": "Jetzt freischalten",
+  "purchaseButton": "Jetzt freischalten ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "Kauf wiederherstellen",
   "alertPreWarning": "Hey, alles okay? Tippe hier ❤️",
   "alertInactivityHours": "Keine Aktivität seit {hours} Stunden",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "E-Mail verifizieren",
   "contactVerifying": "Wird verifiziert...",
   "contactVerifySuccess": "Verifizierungs-E-Mail gesendet, bitte Kontakt bitten, Posteingang zu prüfen",
-  "contactVerifyFail": "Senden fehlgeschlagen, bitte E-Mail-Adresse überprüfen"
+  "contactVerifyFail": "Senden fehlgeschlagen, bitte E-Mail-Adresse überprüfen",
+  "paywallTitle": "Funktion gesperrt",
+  "paywallMessage": "Diese Funktion erfordert einen Kauf. Jetzt freischalten, um den vollen Schutz zu aktivieren.",
+  "paywallUnlock": "Freischalten",
+  "paywallContactTitle": "Kontaktplätze voll",
+  "paywallContactMessage": "Alle kostenlosen Plätze sind belegt. Kaufen Sie zusätzliche Plätze, um mehr Kontakte hinzuzufügen."
 }

@@ -8,6 +8,35 @@ import '../payment/purchase_page.dart';
 import 'language_page.dart';
 import 'email_setup_page.dart';
 
+Future<bool> showPaywallDialog(BuildContext context) async {
+  final l10n = AppLocalizations.of(context)!;
+  final result = await showDialog<bool>(
+    context: context,
+    builder: (ctx) => AlertDialog(
+      icon: const Icon(Icons.lock_outline, size: 40),
+      title: Text(l10n.paywallTitle),
+      content: Text(l10n.paywallMessage),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(ctx, false),
+          child: Text(l10n.cancel),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.pop(ctx, true),
+          child: Text(l10n.paywallUnlock),
+        ),
+      ],
+    ),
+  );
+  if (result == true && context.mounted) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const PurchasePage()),
+    );
+  }
+  return result == true;
+}
+
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
@@ -34,6 +63,10 @@ class SettingsPage extends StatelessWidget {
             ),
             value: profile.isAutoCheckin,
             onChanged: (v) {
+              if (!state.isPurchased) {
+                showPaywallDialog(context);
+                return;
+              }
               state.updateCheckinMode(v);
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(l10n.modeChangeNotice)),
@@ -46,13 +79,25 @@ class SettingsPage extends StatelessWidget {
             title: Text(l10n.settingsInterval24h),
             value: 24,
             groupValue: profile.checkinIntervalHours,
-            onChanged: (v) => state.updateCheckinInterval(v!),
+            onChanged: (v) {
+              if (!state.isPurchased) {
+                showPaywallDialog(context);
+                return;
+              }
+              state.updateCheckinInterval(v!);
+            },
           ),
           RadioListTile<int>(
             title: Text(l10n.settingsInterval12h),
             value: 12,
             groupValue: profile.checkinIntervalHours,
-            onChanged: (v) => state.updateCheckinInterval(v!),
+            onChanged: (v) {
+              if (!state.isPurchased) {
+                showPaywallDialog(context);
+                return;
+              }
+              state.updateCheckinInterval(v!);
+            },
           ),
           const Divider(),
           _SectionHeader(l10n.settingsInactivityThreshold),
@@ -61,7 +106,13 @@ class SettingsPage extends StatelessWidget {
               l10n.settingsInactivityHours(profile.inactivityThresholdHours),
             ),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => _showInactivityPicker(context, state, profile.inactivityThresholdHours),
+            onTap: () {
+              if (!state.isPurchased) {
+                showPaywallDialog(context);
+                return;
+              }
+              _showInactivityPicker(context, state, profile.inactivityThresholdHours);
+            },
           ),
           const Divider(),
           ListTile(
@@ -71,10 +122,16 @@ class SettingsPage extends StatelessWidget {
               profile.hasSmtpConfig ? profile.smtpEmail! : l10n.emailUsingDefault,
             ),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const EmailSetupPage()),
-            ),
+            onTap: () {
+              if (!state.isPurchased) {
+                showPaywallDialog(context);
+                return;
+              }
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const EmailSetupPage()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.people_outline),
@@ -89,10 +146,16 @@ class SettingsPage extends StatelessWidget {
             leading: const Icon(Icons.message_outlined),
             title: Text(l10n.settingsLastMessage),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const MessagePage()),
-            ),
+            onTap: () {
+              if (!state.isPurchased) {
+                showPaywallDialog(context);
+                return;
+              }
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const MessagePage()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.language),

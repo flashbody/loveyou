@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:love_you/l10n/generated/app_localizations.dart';
+import 'package:provider/provider.dart';
+import '../../app/app_state.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/models/emergency_contact.dart';
 import '../../core/services/alert_email_service.dart';
 import '../../core/storage/storage_service.dart';
+import '../payment/purchase_page.dart';
+import '../settings/settings_page.dart' show showPaywallDialog;
 
 class ContactsPage extends StatefulWidget {
   const ContactsPage({super.key});
@@ -14,20 +19,43 @@ class ContactsPage extends StatefulWidget {
 
 class _ContactsPageState extends State<ContactsPage> {
   final _storage = StorageService();
+  String? _extraContactPrice;
 
   List<EmergencyContact> get _contacts => _storage.contacts;
 
-  int get _maxAllowed {
+  bool get _canAdd {
     final profile = _storage.profile;
-    return profile?.maxContacts ?? AppConstants.defaultContactSlots;
+    final maxAllowed = profile?.maxContacts ?? AppConstants.defaultContactSlots;
+    return _contacts.length < maxAllowed;
   }
 
-  bool get _canAddFree => _contacts.length < _maxAllowed;
+  @override
+  void initState() {
+    super.initState();
+    _loadPrice();
+  }
+
+  Future<void> _loadPrice() async {
+    try {
+      final iap = InAppPurchase.instance;
+      if (!await iap.isAvailable()) return;
+      final response = await iap.queryProductDetails({
+        AppConstants.iapExtraContactProductId,
+      });
+      final product = response.productDetails.firstOrNull;
+      if (product != null && mounted) {
+        setState(() => _extraContactPrice = product.price);
+      }
+    } catch (e) {
+      debugPrint('[ContactsPage] Price query error: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    context.watch<AppState>();
 
     return Scaffold(
       appBar: AppBar(
@@ -63,7 +91,7 @@ class _ContactsPageState extends State<ContactsPage> {
                   return Padding(
                     padding: const EdgeInsets.all(16),
                     child: Text(
-                      '${_contacts.length} / ${AppConstants.maxContacts}  ·  ${l10n.contactsExtraCost}',
+                      '${_contacts.length} / ${AppConstants.maxContacts}  ·  ${l10n.contactsExtraCost(_extraContactPrice ?? '--')}',
                       style: theme.textTheme.bodyMedium?.copyWith(
                         color: theme.textTheme.bodyMedium?.color?.withOpacity(0.5),
                       ),
@@ -132,14 +160,44 @@ class _ContactsPageState extends State<ContactsPage> {
         false;
   }
 
-  void _showAddDialog(BuildContext context) {
-    if (!_canAddFree) {
-      // TODO: Trigger IAP for extra contact slot
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(AppLocalizations.of(context)!.contactsExtraCost)),
-      );
+  Future<void> _showAddDialog(BuildContext context) async {
+    final state = context.read<AppState>();
+
+    if (!state.isPurchased) {
+      showPaywallDialog(context);
       return;
     }
+
+    if (!_canAdd) {
+      final l10n = AppLocalizations.of(context)!;
+      final result = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          icon: const Icon(Icons.people_outline, size: 40),
+          title: Text(l10n.paywallContactTitle),
+          content: Text(l10n.paywallContactMessage),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: Text(l10n.cancel),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: Text(l10n.paywallUnlock),
+            ),
+          ],
+        ),
+      );
+      if (result == true && context.mounted) {
+        await Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const PurchasePage()),
+        );
+        if (mounted) setState(() {});
+      }
+      return;
+    }
+
     _showContactForm(context, null, null);
   }
 

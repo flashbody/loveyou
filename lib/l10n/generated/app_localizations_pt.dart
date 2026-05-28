@@ -105,7 +105,9 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => 'Contato extra R\$4,90 cada';
+  String contactsExtraCost(String price) {
+    return 'Contato extra $price cada';
+  }
 
   @override
   String get contactsDefault => 'Padrão (1 incluído)';
@@ -126,10 +128,9 @@ class AppLocalizationsPt extends AppLocalizations {
   String get purchaseDescription => 'Compra única, proteção vitalícia';
 
   @override
-  String get purchasePrice => 'R\$4,90';
-
-  @override
-  String get purchaseButton => 'Desbloquear agora';
+  String purchaseButton(String price) {
+    return 'Desbloquear agora ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => 'Restaurar compra';
@@ -380,4 +381,21 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get contactVerifyFail =>
       'Falha ao enviar, verifique o endereço de email';
+
+  @override
+  String get paywallTitle => 'Recurso bloqueado';
+
+  @override
+  String get paywallMessage =>
+      'Este recurso requer uma compra para ser ativado. Desbloqueie agora para ativar a proteção completa.';
+
+  @override
+  String get paywallUnlock => 'Desbloquear';
+
+  @override
+  String get paywallContactTitle => 'Vagas de contato esgotadas';
+
+  @override
+  String get paywallContactMessage =>
+      'Todas as vagas gratuitas foram usadas. Compre vagas adicionais para adicionar mais contatos.';
 }

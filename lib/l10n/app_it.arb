@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "Contatto extra €0,99 ciascuno",
+  "contactsExtraCost": "Contatto extra {price} ciascuno",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "Predefinito (1 incluso)",
   "messageTitle": "Ultimo messaggio",
   "messageHint": "Scrivi quello che vuoi dire loro...",
   "messageSaved": "Salvato",
   "purchaseTitle": "Sblocca LoveYou",
   "purchaseDescription": "Acquisto unico, protezione a vita",
-  "purchasePrice": "€0,99",
-  "purchaseButton": "Sblocca ora",
+  "purchaseButton": "Sblocca ora ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "Ripristina acquisto",
   "alertPreWarning": "Ehi, tutto bene? Tocca qui ❤️",
   "alertInactivityHours": "Nessuna attività da {hours} ore",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "Verifica email",
   "contactVerifying": "Verifica in corso...",
   "contactVerifySuccess": "Email di verifica inviata, chiedi al contatto di controllare la posta",
-  "contactVerifyFail": "Invio fallito, verifica l'indirizzo email"
+  "contactVerifyFail": "Invio fallito, verifica l'indirizzo email",
+  "paywallTitle": "Funzione bloccata",
+  "paywallMessage": "Questa funzione richiede un acquisto per essere attivata. Sblocca ora per attivare la protezione completa.",
+  "paywallUnlock": "Sblocca",
+  "paywallContactTitle": "Posti contatto esauriti",
+  "paywallContactMessage": "Hai esaurito i posti gratuiti. Acquista posti aggiuntivi per aggiungere altri contatti."
 }

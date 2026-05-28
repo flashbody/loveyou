@@ -105,7 +105,9 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => '추가 연락처 ₩1,500/명';
+  String contactsExtraCost(String price) {
+    return '추가 연락처 $price/명';
+  }
 
   @override
   String get contactsDefault => '기본 (1명 포함)';
@@ -126,10 +128,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get purchaseDescription => '한 번 구매, 평생 보호';
 
   @override
-  String get purchasePrice => '₩1,500';
-
-  @override
-  String get purchaseButton => '지금 잠금 해제';
+  String purchaseButton(String price) {
+    return '지금 잠금 해제 ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => '구매 복원';
@@ -364,4 +365,21 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get contactVerifyFail => '전송 실패, 이메일 주소를 확인해 주세요';
+
+  @override
+  String get paywallTitle => '기능 잠김';
+
+  @override
+  String get paywallMessage =>
+      '이 기능은 구매 후 활성화됩니다. 지금 잠금 해제하여 모든 보호 기능을 활성화하세요.';
+
+  @override
+  String get paywallUnlock => '잠금 해제';
+
+  @override
+  String get paywallContactTitle => '연락처 슬롯 부족';
+
+  @override
+  String get paywallContactMessage =>
+      '무료 슬롯을 모두 사용했습니다. 추가 슬롯을 구매하여 연락처를 더 추가하세요.';
 }

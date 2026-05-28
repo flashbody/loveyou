@@ -106,7 +106,9 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get contactsExtraCost => 'Zusätzlicher Kontakt 0,99 € pro Stück';
+  String contactsExtraCost(String price) {
+    return 'Zusätzlicher Kontakt $price pro Stück';
+  }
 
   @override
   String get contactsDefault => 'Standard (1 inklusive)';
@@ -127,10 +129,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get purchaseDescription => 'Einmaliger Kauf, lebenslanger Schutz';
 
   @override
-  String get purchasePrice => '0,99 €';
-
-  @override
-  String get purchaseButton => 'Jetzt freischalten';
+  String purchaseButton(String price) {
+    return 'Jetzt freischalten ($price)';
+  }
 
   @override
   String get purchaseRestoreButton => 'Kauf wiederherstellen';
@@ -380,4 +381,21 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get contactVerifyFail =>
       'Senden fehlgeschlagen, bitte E-Mail-Adresse überprüfen';
+
+  @override
+  String get paywallTitle => 'Funktion gesperrt';
+
+  @override
+  String get paywallMessage =>
+      'Diese Funktion erfordert einen Kauf. Jetzt freischalten, um den vollen Schutz zu aktivieren.';
+
+  @override
+  String get paywallUnlock => 'Freischalten';
+
+  @override
+  String get paywallContactTitle => 'Kontaktplätze voll';
+
+  @override
+  String get paywallContactMessage =>
+      'Alle kostenlosen Plätze sind belegt. Kaufen Sie zusätzliche Plätze, um mehr Kontakte hinzuzufügen.';
 }

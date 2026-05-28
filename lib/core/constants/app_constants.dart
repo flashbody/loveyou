@@ -28,7 +28,7 @@ class AppConstants {
 
   // IAP Product IDs
   static const String iapUnlockProductId = 'com.loveyou.unlock';
-  static const String iapExtraContactProductId = 'com.loveyou.extra_contact';
+  static const String iapExtraContactProductId = 'com.loveyou.extra_contact_slot';
 
   // Hive Box Names
   static const String profileBox = 'profile';

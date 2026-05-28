@@ -85,5 +85,13 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  Future<void> addExtraContactSlot() async {
+    if (profile != null) {
+      profile!.extraContactSlots += 1;
+      await _storage.saveProfile(profile!);
+      notifyListeners();
+    }
+  }
+
   void refresh() => notifyListeners();
 }

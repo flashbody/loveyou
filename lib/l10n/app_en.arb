@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "Extra contact $0.99 each",
+  "contactsExtraCost": "Extra contact {price} each",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "Default (1 included)",
   "messageTitle": "Last Message",
   "messageHint": "Write what you want to say to them...",
   "messageSaved": "Saved",
   "purchaseTitle": "Unlock LoveYou",
   "purchaseDescription": "One-time purchase, lifetime protection",
-  "purchasePrice": "$0.99",
-  "purchaseButton": "Unlock Now",
+  "purchaseButton": "Unlock Now ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "Restore Purchase",
   "alertPreWarning": "Hey, are you okay? Tap here ❤️",
   "alertInactivityHours": "No activity for {hours} hours",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "Verify Email",
   "contactVerifying": "Verifying...",
   "contactVerifySuccess": "Verification email sent, ask your contact to check inbox",
-  "contactVerifyFail": "Failed to send, please check the email address"
+  "contactVerifyFail": "Failed to send, please check the email address",
+  "paywallTitle": "Feature Locked",
+  "paywallMessage": "This feature requires purchase to take effect. Unlock now to activate full protection.",
+  "paywallUnlock": "Unlock Now",
+  "paywallContactTitle": "Contact Slots Full",
+  "paywallContactMessage": "You've used all free contact slots. Purchase extra slots to add more contacts."
 }

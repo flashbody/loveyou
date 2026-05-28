@@ -5,6 +5,9 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:provider/provider.dart';
 import '../../app/app_state.dart';
 import '../../core/constants/app_constants.dart';
+import '../../core/services/background_service.dart';
+import '../../core/services/location_service.dart';
+import '../../core/services/activity_service.dart';
 
 class PurchasePage extends StatefulWidget {
   const PurchasePage({super.key});
@@ -26,7 +29,10 @@ class _PurchasePageState extends State<PurchasePage> {
     _subscription = _iap.purchaseStream.listen(
       _onPurchaseUpdated,
       onDone: () => _subscription.cancel(),
-      onError: (e) => debugPrint('[IAP] Stream error: $e'),
+      onError: (e) {
+        debugPrint('[IAP] Stream error: $e');
+        if (mounted) setState(() => _purchasing = false);
+      },
     );
     _loadProducts();
   }
@@ -57,20 +63,24 @@ class _PurchasePageState extends State<PurchasePage> {
 
   void _onPurchaseUpdated(List<PurchaseDetails> purchases) {
     for (final purchase in purchases) {
-      if (purchase.status == PurchaseStatus.purchased ||
-          purchase.status == PurchaseStatus.restored) {
-        _deliverProduct(purchase);
+      switch (purchase.status) {
+        case PurchaseStatus.purchased:
+        case PurchaseStatus.restored:
+          _deliverProduct(purchase);
+          break;
+        case PurchaseStatus.error:
+          debugPrint('[IAP] Purchase error: ${purchase.error?.message}');
+          setState(() => _purchasing = false);
+          break;
+        case PurchaseStatus.canceled:
+          setState(() => _purchasing = false);
+          break;
+        case PurchaseStatus.pending:
+          break;
       }
 
       if (purchase.pendingCompletePurchase) {
         _iap.completePurchase(purchase);
-      }
-
-      if (purchase.status == PurchaseStatus.error) {
-        setState(() => _purchasing = false);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(purchase.error?.message ?? 'Purchase failed')),
-        );
       }
     }
   }
@@ -80,12 +90,9 @@ class _PurchasePageState extends State<PurchasePage> {
 
     if (purchase.productID == AppConstants.iapUnlockProductId) {
       state.setPurchased();
+      _activateServices();
     } else if (purchase.productID == AppConstants.iapExtraContactProductId) {
-      final profile = state.profile;
-      if (profile != null) {
-        profile.extraContactSlots += 1;
-        state.refresh();
-      }
+      state.addExtraContactSlot();
     }
 
     setState(() => _purchasing = false);
@@ -96,11 +103,23 @@ class _PurchasePageState extends State<PurchasePage> {
       (p) => p.id == AppConstants.iapUnlockProductId,
     ).firstOrNull;
 
-    if (product == null) return;
+    if (product == null) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Product not available')),
+        );
+      }
+      return;
+    }
 
     setState(() => _purchasing = true);
-    final param = PurchaseParam(productDetails: product);
-    await _iap.buyNonConsumable(purchaseParam: param);
+    try {
+      final param = PurchaseParam(productDetails: product);
+      await _iap.buyNonConsumable(purchaseParam: param);
+    } catch (e) {
+      debugPrint('[IAP] buyUnlock error: $e');
+      if (mounted) setState(() => _purchasing = false);
+    }
   }
 
   Future<void> _buyExtraContact() async {
@@ -111,12 +130,48 @@ class _PurchasePageState extends State<PurchasePage> {
     if (product == null) return;
 
     setState(() => _purchasing = true);
-    final param = PurchaseParam(productDetails: product);
-    await _iap.buyNonConsumable(purchaseParam: param);
+    try {
+      final param = PurchaseParam(productDetails: product);
+      await _iap.buyConsumable(purchaseParam: param);
+    } catch (e) {
+      debugPrint('[IAP] buyExtraContact error: $e');
+      if (mounted) setState(() => _purchasing = false);
+    }
   }
 
   Future<void> _restore() async {
-    await _iap.restorePurchases();
+    try {
+      await _iap.restorePurchases();
+    } catch (e) {
+      debugPrint('[IAP] restore error: $e');
+    }
+  }
+
+  Future<void> _activateServices() async {
+    try {
+      await BackgroundService.registerPeriodicTasks();
+      try {
+        await LocationService().startPeriodicCaching();
+      } catch (_) {}
+      ActivityService().startMonitoring();
+      debugPrint('[PurchasePage] Services activated after purchase');
+    } catch (e) {
+      debugPrint('[PurchasePage] Service activation error: $e');
+    }
+  }
+
+  String? get _unlockPrice {
+    final product = _products.where(
+      (p) => p.id == AppConstants.iapUnlockProductId,
+    ).firstOrNull;
+    return product?.price;
+  }
+
+  String? get _extraContactPrice {
+    final product = _products.where(
+      (p) => p.id == AppConstants.iapExtraContactProductId,
+    ).firstOrNull;
+    return product?.price;
   }
 
   @override
@@ -179,7 +234,7 @@ class _PurchasePageState extends State<PurchasePage> {
                           ? const SizedBox(
                               width: 20, height: 20,
                               child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
-                          : Text(l10n.purchaseButton),
+                          : Text(l10n.purchaseButton(_unlockPrice ?? '--')),
                     ),
                   ] else ...[
                     Card(
@@ -196,7 +251,7 @@ class _PurchasePageState extends State<PurchasePage> {
                       ),
                     ),
                     const SizedBox(height: 24),
-                    Text(l10n.contactsExtraCost, style: theme.textTheme.titleLarge),
+                    Text(l10n.contactsExtraCost(_extraContactPrice ?? '--'), style: theme.textTheme.titleLarge),
                     const SizedBox(height: 8),
                     Text(
                       l10n.purchaseCurrentSlots(state.profile?.maxContacts ?? 1, AppConstants.maxContacts),

@@ -297,8 +297,8 @@ abstract class AppLocalizations {
   /// No description provided for @contactsExtraCost.
   ///
   /// In zh_CN, this message translates to:
-  /// **'额外联系人 ¥1.99/人'**
-  String get contactsExtraCost;
+  /// **'额外联系人 {price}/人'**
+  String contactsExtraCost(String price);
 
   /// No description provided for @contactsDefault.
   ///
@@ -336,17 +336,11 @@ abstract class AppLocalizations {
   /// **'一次买断，终身守护'**
   String get purchaseDescription;
 
-  /// No description provided for @purchasePrice.
-  ///
-  /// In zh_CN, this message translates to:
-  /// **'¥8.00'**
-  String get purchasePrice;
-
   /// No description provided for @purchaseButton.
   ///
   /// In zh_CN, this message translates to:
-  /// **'立即解锁'**
-  String get purchaseButton;
+  /// **'立即解锁 ({price})'**
+  String purchaseButton(String price);
 
   /// No description provided for @purchaseRestoreButton.
   ///
@@ -785,6 +779,36 @@ abstract class AppLocalizations {
   /// In zh_CN, this message translates to:
   /// **'发送失败，请检查邮箱地址是否正确'**
   String get contactVerifyFail;
+
+  /// No description provided for @paywallTitle.
+  ///
+  /// In zh_CN, this message translates to:
+  /// **'功能未解锁'**
+  String get paywallTitle;
+
+  /// No description provided for @paywallMessage.
+  ///
+  /// In zh_CN, this message translates to:
+  /// **'此功能需要购买后才能生效。立即解锁以激活全部守护功能。'**
+  String get paywallMessage;
+
+  /// No description provided for @paywallUnlock.
+  ///
+  /// In zh_CN, this message translates to:
+  /// **'去解锁'**
+  String get paywallUnlock;
+
+  /// No description provided for @paywallContactTitle.
+  ///
+  /// In zh_CN, this message translates to:
+  /// **'联系人名额已满'**
+  String get paywallContactTitle;
+
+  /// No description provided for @paywallContactMessage.
+  ///
+  /// In zh_CN, this message translates to:
+  /// **'免费名额已用完，购买额外名额以添加更多联系人。'**
+  String get paywallContactMessage;
 }
 
 class _AppLocalizationsDelegate

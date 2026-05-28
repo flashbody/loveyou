@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "Contacto extra €0.99 c/u",
+  "contactsExtraCost": "Contacto extra {price} c/u",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "Predeterminado (1 incluido)",
   "messageTitle": "Último mensaje",
   "messageHint": "Escribe lo que quieras decirles...",
   "messageSaved": "Guardado",
   "purchaseTitle": "Desbloquear LoveYou",
   "purchaseDescription": "Compra única, protección de por vida",
-  "purchasePrice": "€0.99",
-  "purchaseButton": "Desbloquear ahora",
+  "purchaseButton": "Desbloquear ahora ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "Restaurar compra",
   "alertPreWarning": "Oye, ¿estás bien? Toca aquí ❤️",
   "alertInactivityHours": "Sin actividad por {hours} horas",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "Verificar correo",
   "contactVerifying": "Verificando...",
   "contactVerifySuccess": "Correo de verificación enviado, pide al contacto que revise su bandeja",
-  "contactVerifyFail": "Error al enviar, verifica la dirección de correo"
+  "contactVerifyFail": "Error al enviar, verifica la dirección de correo",
+  "paywallTitle": "Función bloqueada",
+  "paywallMessage": "Esta función requiere una compra para activarse. Desbloquea ahora para activar la protección completa.",
+  "paywallUnlock": "Desbloquear",
+  "paywallContactTitle": "Espacios de contacto llenos",
+  "paywallContactMessage": "Has usado todos los espacios gratuitos. Compra espacios adicionales para agregar más contactos."
 }

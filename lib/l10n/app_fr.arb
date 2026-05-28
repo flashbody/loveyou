@@ -51,15 +51,28 @@
       }
     }
   },
-  "contactsExtraCost": "Contact supplémentaire 0,99 € chacun",
+  "contactsExtraCost": "Contact supplémentaire {price} chacun",
+  "@contactsExtraCost": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "contactsDefault": "Par défaut (1 inclus)",
   "messageTitle": "Dernier message",
   "messageHint": "Écris ce que tu veux leur dire...",
   "messageSaved": "Enregistré",
   "purchaseTitle": "Débloquer LoveYou",
   "purchaseDescription": "Achat unique, protection à vie",
-  "purchasePrice": "0,99 €",
-  "purchaseButton": "Débloquer",
+  "purchaseButton": "Débloquer ({price})",
+  "@purchaseButton": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
   "purchaseRestoreButton": "Restaurer l'achat",
   "alertPreWarning": "Hé, tu vas bien ? Appuie ici ❤️",
   "alertInactivityHours": "Aucune activité depuis {hours} heures",
@@ -156,5 +169,10 @@
   "contactVerifyEmail": "Vérifier l'email",
   "contactVerifying": "Vérification...",
   "contactVerifySuccess": "Email de vérification envoyé, demandez au contact de vérifier sa boîte",
-  "contactVerifyFail": "Échec de l'envoi, vérifiez l'adresse email"
+  "contactVerifyFail": "Échec de l'envoi, vérifiez l'adresse email",
+  "paywallTitle": "Fonctionnalité verrouillée",
+  "paywallMessage": "Cette fonctionnalité nécessite un achat pour être activée. Déverrouillez maintenant pour activer la protection complète.",
+  "paywallUnlock": "Déverrouiller",
+  "paywallContactTitle": "Places de contact pleines",
+  "paywallContactMessage": "Vos places gratuites sont épuisées. Achetez des places supplémentaires pour ajouter plus de contacts."
 }
