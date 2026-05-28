@@ -39,7 +39,7 @@ class _SplashPageState extends State<SplashPage>
       CurvedAnimation(parent: _fadeController, curve: Curves.easeOut),
     );
 
-    _startSequence();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _startSequence());
   }
 
   Future<void> _startSequence() async {
@@ -72,49 +72,56 @@ class _SplashPageState extends State<SplashPage>
     final isDark = MediaQuery.platformBrightnessOf(context) == Brightness.dark;
     final bgColor = isDark ? const Color(0xFF1A1A1A) : const Color(0xFFFFF0F3);
 
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
-      child: FadeTransition(
-        opacity: _fadeOutAnim,
-        child: Scaffold(
-          backgroundColor: bgColor,
-          body: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ScaleTransition(
-                  scale: _pulseAnim,
-                  child: Image.asset(
-                    'assets/icon/app_icon.png',
-                    width: 120,
-                    height: 120,
+    return Stack(
+      children: [
+        widget.child,
+        IgnorePointer(
+          child: AnnotatedRegion<SystemUiOverlayStyle>(
+            value: isDark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+            child: FadeTransition(
+              opacity: _fadeOutAnim,
+              child: Scaffold(
+                backgroundColor: bgColor,
+                body: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ScaleTransition(
+                        scale: _pulseAnim,
+                        child: Image.asset(
+                          'assets/icon/app_icon.png',
+                          width: 120,
+                          height: 120,
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      Text(
+                        'LoveYou',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w600,
+                          color: isDark ? Colors.white : const Color(0xFF212121),
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Your Safety. Our Promise.',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: isDark
+                              ? Colors.white54
+                              : const Color(0xFF757575),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 24),
-                Text(
-                  'LoveYou',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : const Color(0xFF212121),
-                    letterSpacing: 1.2,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Your Safety. Our Promise.',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: isDark
-                        ? Colors.white54
-                        : const Color(0xFF757575),
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

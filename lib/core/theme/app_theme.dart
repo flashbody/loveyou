@@ -63,6 +63,29 @@ class AppTheme {
         ),
         color: Colors.white,
       ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: Colors.white,
+        indicatorColor: const Color(0xFFE8E8E8),
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const IconThemeData(color: Color(0xFF212121));
+          }
+          return const IconThemeData(color: Color(0xFF757575));
+        }),
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const TextStyle(
+              color: Color(0xFF212121),
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            );
+          }
+          return const TextStyle(
+            color: Color(0xFF757575),
+            fontSize: 12,
+          );
+        }),
+      ),
     );
   }
 
@@ -113,6 +136,29 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
         ),
         color: const Color(0xFF1E1E1E),
+      ),
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: const Color(0xFF1E1E1E),
+        indicatorColor: const Color(0xFF3A3A3A),
+        iconTheme: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const IconThemeData(color: Colors.white);
+          }
+          return const IconThemeData(color: Color(0xFF9E9E9E));
+        }),
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
+            return const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+            );
+          }
+          return const TextStyle(
+            color: Color(0xFF9E9E9E),
+            fontSize: 12,
+          );
+        }),
       ),
     );
   }
