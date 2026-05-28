@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoveYou - Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #E91E63;
+    --card: #f8f9fa;
+    --border: #e9ecef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --text: #e0e0e0;
+      --muted: #9e9e9e;
+      --accent: #FF5252;
+      --card: #1e1e1e;
+      --border: #333333;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 0;
+  }
+  .header {
+    background: linear-gradient(135deg, #FF5252, #E91E63);
+    color: #fff;
+    padding: 48px 24px 36px;
+    text-align: center;
+  }
+  .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 14px; opacity: 0.9; }
+  .lang-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 24px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-btn {
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover, .lang-btn.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 32px 24px 64px; }
+  .section { margin-bottom: 28px; }
+  .section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--accent);
+  }
+  .section p, .section li {
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .section ul { padding-left: 20px; }
+  .section li { list-style: disc; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>LoveYou</h1>
+  <p id="header-subtitle">Privacy Policy</p>
+</div>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="switchLang('en')">English</button>
+  <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+  <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+  <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+  <button class="lang-btn" onclick="switchLang('es')">Español</button>
+  <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+  <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+  <button class="lang-btn" onclick="switchLang('pt')">Português</button>
+  <button class="lang-btn" onclick="switchLang('it')">Italiano</button>
+</div>
+
+<div class="container">
+
+<!-- English -->
+<div class="lang-content active" id="lang-en">
+  <p style="color:var(--muted);margin-bottom:24px;">Effective Date: May 28, 2026</p>
+
+  <div class="section">
+    <h2>1. Introduction</h2>
+    <p>LoveYou ("we", "our", or "the App") is a personal safety guardian application designed for people living alone. This Privacy Policy explains how we collect, use, and protect your information.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Information We Collect</h2>
+    <div class="card">
+      <p><strong>Location Data</strong> — We collect your device's location in the background to provide safety monitoring. Location data is cached locally on your device and included in emergency alert emails only when triggered.</p>
+    </div>
+    <div class="card">
+      <p><strong>Emergency Contacts</strong> — You provide names and email addresses of your emergency contacts. This data is stored locally on your device.</p>
+    </div>
+    <div class="card">
+      <p><strong>Check-in Records</strong> — We record your manual and automatic check-in timestamps locally to monitor your activity status.</p>
+    </div>
+    <div class="card">
+      <p><strong>Email Configuration</strong> — If you configure a custom SMTP email, your email credentials are stored locally on your device for sending alert notifications.</p>
+    </div>
+    <div class="card">
+      <p><strong>Purchase Information</strong> — In-app purchase records are managed by Apple App Store. We only store the purchase status locally.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li>To monitor your safety status through check-in tracking</li>
+      <li>To send emergency alert emails to your designated contacts when inactivity is detected</li>
+      <li>To include your last known location in emergency notifications</li>
+      <li>To provide personalized safety settings</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Data Storage & Security</h2>
+    <p>All personal data is stored <strong>locally on your device</strong> using encrypted storage. We do not operate any cloud servers. Your data is never uploaded to or stored on external servers controlled by us.</p>
+    <p>Email alerts are sent directly from your configured email account (or our default relay) to your emergency contacts via SMTP.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Data Sharing</h2>
+    <p>We do <strong>not</strong> sell, share, or transfer your personal data to any third parties. Your emergency contact information is only used to send alert emails when safety conditions are triggered.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Your Rights</h2>
+    <ul>
+      <li>You can delete all your data by uninstalling the App</li>
+      <li>You can modify or remove emergency contacts at any time</li>
+      <li>You can disable location services and background monitoring in your device settings</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Children's Privacy</h2>
+    <p>LoveYou is not intended for children under 13. We do not knowingly collect personal information from children.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated effective date.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- 中文 -->
+<div class="lang-content" id="lang-zh">
+  <p style="color:var(--muted);margin-bottom:24px;">生效日期：2026年5月28日</p>
+
+  <div class="section">
+    <h2>1. 简介</h2>
+    <p>LoveYou（"我们"或"本应用"）是一款专为独居人士设计的人身安全守护应用。本隐私政策说明我们如何收集、使用和保护您的信息。</p>
+  </div>
+
+  <div class="section">
+    <h2>2. 我们收集的信息</h2>
+    <div class="card">
+      <p><strong>位置数据</strong> — 我们在后台收集您的设备位置以提供安全监控。位置数据缓存在您的设备本地，仅在触发紧急警报时包含在邮件通知中。</p>
+    </div>
+    <div class="card">
+      <p><strong>紧急联系人</strong> — 您提供的紧急联系人姓名和邮箱地址，存储在您的设备本地。</p>
+    </div>
+    <div class="card">
+      <p><strong>签到记录</strong> — 我们在本地记录您的手动和自动签到时间戳，用于监控您的活动状态。</p>
+    </div>
+    <div class="card">
+      <p><strong>邮箱配置</strong> — 如果您配置了自定义 SMTP 邮箱，您的邮箱凭据将存储在设备本地，用于发送警报通知。</p>
+    </div>
+    <div class="card">
+      <p><strong>购买信息</strong> — 应用内购买记录由 Apple App Store 管理。我们仅在本地存储购买状态。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. 信息使用方式</h2>
+    <ul>
+      <li>通过签到跟踪监控您的安全状态</li>
+      <li>检测到无活动时，向您指定的联系人发送紧急警报邮件</li>
+      <li>在紧急通知中包含您最后的已知位置</li>
+      <li>提供个性化的安全设置</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. 数据存储与安全</h2>
+    <p>所有个人数据均使用加密存储<strong>保存在您的设备本地</strong>。我们不运营任何云服务器。您的数据不会被上传或存储在我们控制的外部服务器上。</p>
+    <p>警报邮件通过 SMTP 从您配置的邮箱账户（或我们的默认中转邮箱）直接发送给您的紧急联系人。</p>
+  </div>
+
+  <div class="section">
+    <h2>5. 数据共享</h2>
+    <p>我们<strong>不会</strong>向任何第三方出售、分享或转让您的个人数据。您的紧急联系人信息仅在安全条件触发时用于发送警报邮件。</p>
+  </div>
+
+  <div class="section">
+    <h2>6. 您的权利</h2>
+    <ul>
+      <li>您可以通过卸载应用删除所有数据</li>
+      <li>您可以随时修改或删除紧急联系人</li>
+      <li>您可以在设备设置中禁用定位服务和后台监控</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. 儿童隐私</h2>
+    <p>LoveYou 不面向 13 岁以下儿童。我们不会故意收集儿童的个人信息。</p>
+  </div>
+
+  <div class="section">
+    <h2>8. 政策变更</h2>
+    <p>我们可能会不时更新本隐私政策。变更将在本页面反映，并更新生效日期。</p>
+  </div>
+
+  <div class="section">
+    <h2>9. 联系我们</h2>
+    <p>如果您对本隐私政策有任何疑问，请联系我们：<a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- 日本語 -->
+<div class="lang-content" id="lang-ja">
+  <p style="color:var(--muted);margin-bottom:24px;">発効日：2026年5月28日</p>
+
+  <div class="section">
+    <h2>1. はじめに</h2>
+    <p>LoveYou（「当社」または「本アプリ」）は、一人暮らしの方のために設計されたパーソナルセーフティアプリケーションです。このプライバシーポリシーでは、お客様の情報の収集、使用、保護について説明します。</p>
+  </div>
+
+  <div class="section">
+    <h2>2. 収集する情報</h2>
+    <div class="card">
+      <p><strong>位置情報</strong> — 安全監視のためにバックグラウンドでデバイスの位置情報を収集します。位置データはデバイスにローカル保存され、緊急アラートメール発信時のみ使用されます。</p>
+    </div>
+    <div class="card">
+      <p><strong>緊急連絡先</strong> — お客様が提供する緊急連絡先の名前とメールアドレスは、デバイスにローカル保存されます。</p>
+    </div>
+    <div class="card">
+      <p><strong>チェックイン記録</strong> — 手動および自動チェックインのタイムスタンプをローカルに記録し、活動状態を監視します。</p>
+    </div>
+    <div class="card">
+      <p><strong>メール設定</strong> — カスタムSMTPメールを設定した場合、メール資格情報はアラート通知送信のためにデバイスにローカル保存されます。</p>
+    </div>
+    <div class="card">
+      <p><strong>購入情報</strong> — アプリ内購入記録はApple App Storeが管理します。購入状態のみローカルに保存します。</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. 情報の使用方法</h2>
+    <ul>
+      <li>チェックイン追跡による安全状態の監視</li>
+      <li>無活動検出時に指定連絡先への緊急アラートメール送信</li>
+      <li>緊急通知に最後の既知位置情報を含める</li>
+      <li>パーソナライズされた安全設定の提供</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. データの保存とセキュリティ</h2>
+    <p>すべての個人データは暗号化ストレージを使用して<strong>デバイスにローカル保存</strong>されます。当社はクラウドサーバーを運営していません。お客様のデータが当社管理の外部サーバーにアップロードまたは保存されることはありません。</p>
+  </div>
+
+  <div class="section">
+    <h2>5. データの共有</h2>
+    <p>お客様の個人データを第三者に販売、共有、または転送することは<strong>ありません</strong>。</p>
+  </div>
+
+  <div class="section">
+    <h2>6. お客様の権利</h2>
+    <ul>
+      <li>アプリをアンインストールすることですべてのデータを削除できます</li>
+      <li>いつでも緊急連絡先を変更または削除できます</li>
+      <li>デバイス設定で位置情報サービスとバックグラウンド監視を無効にできます</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. お子様のプライバシー</h2>
+    <p>LoveYouは13歳未満のお子様を対象としていません。</p>
+  </div>
+
+  <div class="section">
+    <h2>8. ポリシーの変更</h2>
+    <p>本プライバシーポリシーは随時更新される場合があります。変更は発効日の更新とともにこのページに反映されます。</p>
+  </div>
+
+  <div class="section">
+    <h2>9. お問い合わせ</h2>
+    <p>本プライバシーポリシーに関するご質問は、以下までご連絡ください：<a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- 한국어 -->
+<div class="lang-content" id="lang-ko">
+  <p style="color:var(--muted);margin-bottom:24px;">시행일: 2026년 5월 28일</p>
+
+  <div class="section">
+    <h2>1. 소개</h2>
+    <p>LoveYou("당사" 또는 "본 앱")는 1인 가구를 위한 개인 안전 보호 애플리케이션입니다. 본 개인정보 처리방침은 당사가 귀하의 정보를 수집, 사용 및 보호하는 방법을 설명합니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. 수집하는 정보</h2>
+    <div class="card">
+      <p><strong>위치 데이터</strong> — 안전 모니터링을 위해 백그라운드에서 기기의 위치를 수집합니다. 위치 데이터는 기기에 로컬 저장되며, 긴급 알림 이메일 발송 시에만 포함됩니다.</p>
+    </div>
+    <div class="card">
+      <p><strong>긴급 연락처</strong> — 귀하가 제공하는 긴급 연락처의 이름과 이메일 주소는 기기에 로컬 저장됩니다.</p>
+    </div>
+    <div class="card">
+      <p><strong>체크인 기록</strong> — 수동 및 자동 체크인 타임스탬프를 로컬에 기록하여 활동 상태를 모니터링합니다.</p>
+    </div>
+    <div class="card">
+      <p><strong>이메일 설정</strong> — 사용자 정의 SMTP 이메일을 설정한 경우, 알림 발송을 위해 이메일 자격 증명이 기기에 로컬 저장됩니다.</p>
+    </div>
+    <div class="card">
+      <p><strong>구매 정보</strong> — 인앱 구매 기록은 Apple App Store에서 관리합니다. 구매 상태만 로컬에 저장합니다.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. 정보 사용 방법</h2>
+    <ul>
+      <li>체크인 추적을 통한 안전 상태 모니터링</li>
+      <li>비활동 감지 시 지정된 연락처에 긴급 알림 이메일 발송</li>
+      <li>긴급 알림에 마지막 알려진 위치 포함</li>
+      <li>개인화된 안전 설정 제공</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. 데이터 저장 및 보안</h2>
+    <p>모든 개인 데이터는 암호화된 저장소를 사용하여 <strong>기기에 로컬 저장</strong>됩니다. 당사는 클라우드 서버를 운영하지 않습니다. 귀하의 데이터는 당사가 관리하는 외부 서버에 업로드되거나 저장되지 않습니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. 데이터 공유</h2>
+    <p>당사는 귀하의 개인 데이터를 제3자에게 판매, 공유 또는 이전하지 <strong>않습니다</strong>.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. 귀하의 권리</h2>
+    <ul>
+      <li>앱을 삭제하여 모든 데이터를 제거할 수 있습니다</li>
+      <li>언제든지 긴급 연락처를 수정하거나 삭제할 수 있습니다</li>
+      <li>기기 설정에서 위치 서비스와 백그라운드 모니터링을 비활성화할 수 있습니다</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. 아동 개인정보</h2>
+    <p>LoveYou는 13세 미만 아동을 대상으로 하지 않습니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. 정책 변경</h2>
+    <p>본 개인정보 처리방침은 수시로 업데이트될 수 있습니다. 변경 사항은 시행일 업데이트와 함께 이 페이지에 반영됩니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. 문의하기</h2>
+    <p>본 개인정보 처리방침에 대한 문의 사항은 다음으로 연락하십시오: <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- Español -->
+<div class="lang-content" id="lang-es">
+  <p style="color:var(--muted);margin-bottom:24px;">Fecha de vigencia: 28 de mayo de 2026</p>
+
+  <div class="section">
+    <h2>1. Introducción</h2>
+    <p>LoveYou ("nosotros" o "la App") es una aplicación de seguridad personal diseñada para personas que viven solas. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos su información.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Información que recopilamos</h2>
+    <div class="card">
+      <p><strong>Datos de ubicación</strong> — Recopilamos la ubicación de su dispositivo en segundo plano para proporcionar monitoreo de seguridad. Los datos de ubicación se almacenan localmente en su dispositivo.</p>
+    </div>
+    <div class="card">
+      <p><strong>Contactos de emergencia</strong> — Los nombres y direcciones de correo electrónico de sus contactos de emergencia se almacenan localmente en su dispositivo.</p>
+    </div>
+    <div class="card">
+      <p><strong>Registros de check-in</strong> — Registramos localmente las marcas de tiempo de check-in manual y automático para monitorear su estado de actividad.</p>
+    </div>
+    <div class="card">
+      <p><strong>Configuración de correo</strong> — Si configura un correo SMTP personalizado, sus credenciales se almacenan localmente para enviar notificaciones de alerta.</p>
+    </div>
+    <div class="card">
+      <p><strong>Información de compras</strong> — Los registros de compras dentro de la app son gestionados por Apple App Store. Solo almacenamos el estado de compra localmente.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Cómo usamos su información</h2>
+    <ul>
+      <li>Monitorear su estado de seguridad mediante seguimiento de check-in</li>
+      <li>Enviar correos de alerta de emergencia a sus contactos designados cuando se detecta inactividad</li>
+      <li>Incluir su última ubicación conocida en las notificaciones de emergencia</li>
+      <li>Proporcionar configuraciones de seguridad personalizadas</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Almacenamiento y seguridad de datos</h2>
+    <p>Todos los datos personales se almacenan <strong>localmente en su dispositivo</strong> utilizando almacenamiento cifrado. No operamos servidores en la nube.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Compartir datos</h2>
+    <p><strong>No</strong> vendemos, compartimos ni transferimos sus datos personales a terceros.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Sus derechos</h2>
+    <ul>
+      <li>Puede eliminar todos sus datos desinstalando la App</li>
+      <li>Puede modificar o eliminar contactos de emergencia en cualquier momento</li>
+      <li>Puede desactivar los servicios de ubicación en la configuración de su dispositivo</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Privacidad de los niños</h2>
+    <p>LoveYou no está destinada a menores de 13 años.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Cambios en esta política</h2>
+    <p>Podemos actualizar esta Política de Privacidad periódicamente. Los cambios se reflejarán en esta página.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Contáctenos</h2>
+    <p>Si tiene preguntas, contáctenos en: <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- Français -->
+<div class="lang-content" id="lang-fr">
+  <p style="color:var(--muted);margin-bottom:24px;">Date d'effet : 28 mai 2026</p>
+
+  <div class="section">
+    <h2>1. Introduction</h2>
+    <p>LoveYou ("nous" ou "l'App") est une application de sécurité personnelle conçue pour les personnes vivant seules. Cette Politique de Confidentialité explique comment nous collectons, utilisons et protégeons vos informations.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Informations collectées</h2>
+    <div class="card">
+      <p><strong>Données de localisation</strong> — Nous collectons la position de votre appareil en arrière-plan pour la surveillance de sécurité. Les données sont stockées localement sur votre appareil.</p>
+    </div>
+    <div class="card">
+      <p><strong>Contacts d'urgence</strong> — Les noms et adresses e-mail de vos contacts d'urgence sont stockés localement sur votre appareil.</p>
+    </div>
+    <div class="card">
+      <p><strong>Enregistrements de check-in</strong> — Nous enregistrons localement les horodatages de check-in pour surveiller votre état d'activité.</p>
+    </div>
+    <div class="card">
+      <p><strong>Configuration e-mail</strong> — Si vous configurez un e-mail SMTP personnalisé, vos identifiants sont stockés localement pour l'envoi de notifications d'alerte.</p>
+    </div>
+    <div class="card">
+      <p><strong>Informations d'achat</strong> — Les achats intégrés sont gérés par l'Apple App Store. Nous ne stockons que l'état d'achat localement.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Utilisation des informations</h2>
+    <ul>
+      <li>Surveiller votre état de sécurité via le suivi des check-ins</li>
+      <li>Envoyer des e-mails d'alerte d'urgence à vos contacts désignés en cas d'inactivité détectée</li>
+      <li>Inclure votre dernière position connue dans les notifications d'urgence</li>
+      <li>Fournir des paramètres de sécurité personnalisés</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Stockage et sécurité des données</h2>
+    <p>Toutes les données personnelles sont stockées <strong>localement sur votre appareil</strong> avec un stockage chiffré. Nous n'exploitons aucun serveur cloud.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Partage des données</h2>
+    <p>Nous ne vendons, ne partageons ni ne transférons <strong>jamais</strong> vos données personnelles à des tiers.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Vos droits</h2>
+    <ul>
+      <li>Vous pouvez supprimer toutes vos données en désinstallant l'App</li>
+      <li>Vous pouvez modifier ou supprimer vos contacts d'urgence à tout moment</li>
+      <li>Vous pouvez désactiver les services de localisation dans les paramètres de votre appareil</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Confidentialité des enfants</h2>
+    <p>LoveYou n'est pas destinée aux enfants de moins de 13 ans.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Modifications de cette politique</h2>
+    <p>Nous pouvons mettre à jour cette Politique de Confidentialité périodiquement. Les modifications seront reflétées sur cette page.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Nous contacter</h2>
+    <p>Pour toute question, contactez-nous à : <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- Deutsch -->
+<div class="lang-content" id="lang-de">
+  <p style="color:var(--muted);margin-bottom:24px;">Gültig ab: 28. Mai 2026</p>
+
+  <div class="section">
+    <h2>1. Einleitung</h2>
+    <p>LoveYou („wir" oder „die App") ist eine persönliche Sicherheits-App für alleinlebende Personen. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Informationen erfassen, verwenden und schützen.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Erfasste Informationen</h2>
+    <div class="card">
+      <p><strong>Standortdaten</strong> — Wir erfassen den Standort Ihres Geräts im Hintergrund zur Sicherheitsüberwachung. Standortdaten werden lokal auf Ihrem Gerät gespeichert.</p>
+    </div>
+    <div class="card">
+      <p><strong>Notfallkontakte</strong> — Namen und E-Mail-Adressen Ihrer Notfallkontakte werden lokal auf Ihrem Gerät gespeichert.</p>
+    </div>
+    <div class="card">
+      <p><strong>Check-in-Aufzeichnungen</strong> — Wir zeichnen manuelle und automatische Check-in-Zeitstempel lokal auf, um Ihren Aktivitätsstatus zu überwachen.</p>
+    </div>
+    <div class="card">
+      <p><strong>E-Mail-Konfiguration</strong> — Bei benutzerdefinierter SMTP-E-Mail-Konfiguration werden Ihre Zugangsdaten lokal für den Versand von Alarmbenachrichtigungen gespeichert.</p>
+    </div>
+    <div class="card">
+      <p><strong>Kaufinformationen</strong> — In-App-Käufe werden vom Apple App Store verwaltet. Wir speichern nur den Kaufstatus lokal.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Verwendung Ihrer Informationen</h2>
+    <ul>
+      <li>Überwachung Ihres Sicherheitsstatus durch Check-in-Verfolgung</li>
+      <li>Versand von Notfall-E-Mails an Ihre Kontakte bei erkannter Inaktivität</li>
+      <li>Einbeziehung Ihres letzten bekannten Standorts in Notfallbenachrichtigungen</li>
+      <li>Bereitstellung personalisierter Sicherheitseinstellungen</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Datenspeicherung und Sicherheit</h2>
+    <p>Alle persönlichen Daten werden <strong>lokal auf Ihrem Gerät</strong> mit verschlüsseltem Speicher gespeichert. Wir betreiben keine Cloud-Server.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Datenweitergabe</h2>
+    <p>Wir verkaufen, teilen oder übertragen Ihre persönlichen Daten <strong>nicht</strong> an Dritte.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Ihre Rechte</h2>
+    <ul>
+      <li>Sie können alle Daten durch Deinstallation der App löschen</li>
+      <li>Sie können Notfallkontakte jederzeit ändern oder entfernen</li>
+      <li>Sie können Standortdienste in Ihren Geräteeinstellungen deaktivieren</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Datenschutz für Kinder</h2>
+    <p>LoveYou ist nicht für Kinder unter 13 Jahren bestimmt.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Änderungen dieser Richtlinie</h2>
+    <p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden auf dieser Seite widergespiegelt.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Kontakt</h2>
+    <p>Bei Fragen kontaktieren Sie uns unter: <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- Português -->
+<div class="lang-content" id="lang-pt">
+  <p style="color:var(--muted);margin-bottom:24px;">Data de vigência: 28 de maio de 2026</p>
+
+  <div class="section">
+    <h2>1. Introdução</h2>
+    <p>LoveYou ("nós" ou "o App") é um aplicativo de segurança pessoal projetado para pessoas que moram sozinhas. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Informações coletadas</h2>
+    <div class="card">
+      <p><strong>Dados de localização</strong> — Coletamos a localização do seu dispositivo em segundo plano para monitoramento de segurança. Os dados são armazenados localmente no seu dispositivo.</p>
+    </div>
+    <div class="card">
+      <p><strong>Contatos de emergência</strong> — Nomes e endereços de e-mail dos seus contatos de emergência são armazenados localmente no seu dispositivo.</p>
+    </div>
+    <div class="card">
+      <p><strong>Registros de check-in</strong> — Registramos localmente os carimbos de data/hora de check-in para monitorar seu status de atividade.</p>
+    </div>
+    <div class="card">
+      <p><strong>Configuração de e-mail</strong> — Se você configurar um e-mail SMTP personalizado, suas credenciais são armazenadas localmente para envio de notificações de alerta.</p>
+    </div>
+    <div class="card">
+      <p><strong>Informações de compra</strong> — Compras no app são gerenciadas pela Apple App Store. Apenas armazenamos o status de compra localmente.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Como usamos suas informações</h2>
+    <ul>
+      <li>Monitorar seu status de segurança através do rastreamento de check-in</li>
+      <li>Enviar e-mails de alerta de emergência aos seus contatos quando inatividade é detectada</li>
+      <li>Incluir sua última localização conhecida nas notificações de emergência</li>
+      <li>Fornecer configurações de segurança personalizadas</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Armazenamento e segurança de dados</h2>
+    <p>Todos os dados pessoais são armazenados <strong>localmente no seu dispositivo</strong> com armazenamento criptografado. Não operamos servidores em nuvem.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Compartilhamento de dados</h2>
+    <p><strong>Não</strong> vendemos, compartilhamos ou transferimos seus dados pessoais a terceiros.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. Seus direitos</h2>
+    <ul>
+      <li>Você pode excluir todos os seus dados desinstalando o App</li>
+      <li>Você pode modificar ou remover contatos de emergência a qualquer momento</li>
+      <li>Você pode desativar os serviços de localização nas configurações do seu dispositivo</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Privacidade infantil</h2>
+    <p>LoveYou não é destinado a crianças menores de 13 anos.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Alterações nesta política</h2>
+    <p>Podemos atualizar esta Política de Privacidade periodicamente. As alterações serão refletidas nesta página.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Contato</h2>
+    <p>Para dúvidas, entre em contato: <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+<!-- Italiano -->
+<div class="lang-content" id="lang-it">
+  <p style="color:var(--muted);margin-bottom:24px;">Data di decorrenza: 28 maggio 2026</p>
+
+  <div class="section">
+    <h2>1. Introduzione</h2>
+    <p>LoveYou ("noi" o "l'App") è un'applicazione di sicurezza personale progettata per le persone che vivono sole. Questa Informativa sulla Privacy spiega come raccogliamo, utilizziamo e proteggiamo le vostre informazioni.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Informazioni raccolte</h2>
+    <div class="card">
+      <p><strong>Dati di posizione</strong> — Raccogliamo la posizione del dispositivo in background per il monitoraggio della sicurezza. I dati vengono memorizzati localmente sul dispositivo.</p>
+    </div>
+    <div class="card">
+      <p><strong>Contatti di emergenza</strong> — I nomi e gli indirizzi e-mail dei contatti di emergenza vengono memorizzati localmente sul dispositivo.</p>
+    </div>
+    <div class="card">
+      <p><strong>Registri di check-in</strong> — Registriamo localmente i timestamp dei check-in per monitorare lo stato di attività.</p>
+    </div>
+    <div class="card">
+      <p><strong>Configurazione e-mail</strong> — Se si configura un'e-mail SMTP personalizzata, le credenziali vengono memorizzate localmente per l'invio di notifiche di allarme.</p>
+    </div>
+    <div class="card">
+      <p><strong>Informazioni sugli acquisti</strong> — Gli acquisti in-app sono gestiti dall'Apple App Store. Memorizziamo solo lo stato di acquisto localmente.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Come utilizziamo le informazioni</h2>
+    <ul>
+      <li>Monitorare lo stato di sicurezza tramite il tracciamento dei check-in</li>
+      <li>Inviare e-mail di allarme di emergenza ai contatti designati quando viene rilevata inattività</li>
+      <li>Includere l'ultima posizione nota nelle notifiche di emergenza</li>
+      <li>Fornire impostazioni di sicurezza personalizzate</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Archiviazione e sicurezza dei dati</h2>
+    <p>Tutti i dati personali sono memorizzati <strong>localmente sul dispositivo</strong> con archiviazione crittografata. Non operiamo server cloud.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Condivisione dei dati</h2>
+    <p><strong>Non</strong> vendiamo, condividiamo o trasferiamo i dati personali a terzi.</p>
+  </div>
+
+  <div class="section">
+    <h2>6. I vostri diritti</h2>
+    <ul>
+      <li>È possibile eliminare tutti i dati disinstallando l'App</li>
+      <li>È possibile modificare o rimuovere i contatti di emergenza in qualsiasi momento</li>
+      <li>È possibile disabilitare i servizi di localizzazione nelle impostazioni del dispositivo</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Privacy dei minori</h2>
+    <p>LoveYou non è destinata a minori di 13 anni.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Modifiche a questa informativa</h2>
+    <p>Potremmo aggiornare periodicamente questa Informativa sulla Privacy. Le modifiche saranno riportate su questa pagina.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Contattaci</h2>
+    <p>Per domande, contattateci a: <a href="mailto:flashbody@foxmail.com" style="color:var(--accent);">flashbody@foxmail.com</a></p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  © 2026 LoveYou. All rights reserved.
+</div>
+
+<script>
+const subtitles = {
+  en: 'Privacy Policy',
+  zh: '隐私政策',
+  ja: 'プライバシーポリシー',
+  ko: '개인정보 처리방침',
+  es: 'Política de Privacidad',
+  fr: 'Politique de Confidentialité',
+  de: 'Datenschutzrichtlinie',
+  pt: 'Política de Privacidade',
+  it: 'Informativa sulla Privacy'
+};
+
+function switchLang(lang) {
+  document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.getElementById('header-subtitle').textContent = subtitles[lang] || 'Privacy Policy';
+  event.target.classList.add('active');
+}
+
+(function() {
+  const userLang = (navigator.language || 'en').split('-')[0].toLowerCase();
+  if (document.getElementById('lang-' + userLang)) {
+    switchLang(userLang);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('onclick').includes(userLang)) btn.classList.add('active');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
