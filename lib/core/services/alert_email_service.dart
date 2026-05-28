@@ -274,12 +274,44 @@ class AlertEmailService {
       ..text = body.toString();
   }
 
+  Future<void> sendCheckinNotification() async {
+    final server = _buildSmtpServer();
+    final profile = _storage.profile;
+    if (profile == null) return;
+
+    final contacts = _storage.contacts;
+    if (contacts.isEmpty) return;
+
+    final from = senderEmail;
+    final now = DateTime.now().toString().substring(0, 19);
+
+    for (final contact in contacts) {
+      try {
+        final message = Message()
+          ..from = Address(from, 'LoveYou')
+          ..recipients.add(contact.email)
+          ..subject = _t(_checkinSubject, {'name': profile.name})
+          ..text = '${_t(_checkinGreeting, {'name': contact.name})}\n\n'
+              '${_t(_checkinBody, {'name': profile.name, 'time': now})}\n\n'
+              '${_t(_autoFooter)}';
+
+        await send(message, server);
+        debugPrint('[EmailService] Checkin notification sent to ${contact.email}');
+      } catch (e) {
+        debugPrint('[EmailService] Checkin notify failed: $e');
+      }
+    }
+  }
+
   // --- Locale-aware template keys ---
 
   static const _verifySubject = 'verifySubject';
   static const _verifyBody = 'verifyBody';
   static const _testSubject = 'testSubject';
   static const _testBody = 'testBody';
+  static const _checkinSubject = 'checkinSubject';
+  static const _checkinGreeting = 'checkinGreeting';
+  static const _checkinBody = 'checkinBody';
   static const _settingsSubject = 'settingsSubject';
   static const _settingsGreeting = 'settingsGreeting';
   static const _settingsChanged = 'settingsChanged';
@@ -314,6 +346,9 @@ class AlertEmailService {
       'emailNotConfigured': '未配置邮箱信息',
       'testSubject': '[LoveYou] 邮箱配置测试',
       'testBody': '恭喜！你的 LoveYou 邮箱配置成功。\n当你需要帮助时，邮件会从这个邮箱发出。',
+      'checkinSubject': '[LoveYou] {name} 已完成安全签到',
+      'checkinGreeting': '{name}，你好：',
+      'checkinBody': '{name} 已于 {time} 完成安全签到，一切正常。',
       'settingsSubject': '[LoveYou] {name} 的守护设置已更新',
       'settingsGreeting': '{name}，你好：',
       'settingsChanged': '{name} 更新了 LoveYou 守护设置：',
@@ -339,6 +374,9 @@ class AlertEmailService {
       'emailNotConfigured': 'Email not configured',
       'testSubject': '[LoveYou] Email Configuration Test',
       'testBody': 'Congratulations! Your LoveYou email is configured.\nWhen you need help, emails will be sent from this address.',
+      'checkinSubject': '[LoveYou] {name} has checked in safely',
+      'checkinGreeting': 'Hello {name},',
+      'checkinBody': '{name} completed a safety check-in at {time}. Everything is fine.',
       'settingsSubject': '[LoveYou] {name} updated their safety settings',
       'settingsGreeting': 'Hello {name},',
       'settingsChanged': '{name} has updated their LoveYou safety settings:',
@@ -364,6 +402,9 @@ class AlertEmailService {
       'emailNotConfigured': 'Correo no configurado',
       'testSubject': '[LoveYou] Prueba de configuración de correo',
       'testBody': '¡Felicidades! Tu correo de LoveYou está configurado.\nCuando necesites ayuda, los correos se enviarán desde esta dirección.',
+      'checkinSubject': '[LoveYou] {name} ha registrado su seguridad',
+      'checkinGreeting': 'Hola {name},',
+      'checkinBody': '{name} completó un registro de seguridad a las {time}. Todo está bien.',
       'settingsSubject': '[LoveYou] {name} actualizó su configuración de seguridad',
       'settingsGreeting': 'Hola {name},',
       'settingsChanged': '{name} ha actualizado su configuración de seguridad en LoveYou:',
@@ -389,6 +430,9 @@ class AlertEmailService {
       'emailNotConfigured': 'Email non configuré',
       'testSubject': '[LoveYou] Test de configuration email',
       'testBody': 'Félicitations ! Votre email LoveYou est configuré.\nEn cas de besoin, les emails seront envoyés depuis cette adresse.',
+      'checkinSubject': '[LoveYou] {name} a effectué un check-in de sécurité',
+      'checkinGreeting': 'Bonjour {name},',
+      'checkinBody': '{name} a effectué un check-in de sécurité à {time}. Tout va bien.',
       'settingsSubject': '[LoveYou] {name} a mis à jour ses paramètres de sécurité',
       'settingsGreeting': 'Bonjour {name},',
       'settingsChanged': '{name} a mis à jour ses paramètres de sécurité LoveYou :',
@@ -414,6 +458,9 @@ class AlertEmailService {
       'emailNotConfigured': 'E-Mail nicht konfiguriert',
       'testSubject': '[LoveYou] E-Mail-Konfigurationstest',
       'testBody': 'Herzlichen Glückwunsch! Deine LoveYou E-Mail ist konfiguriert.\nBei Bedarf werden E-Mails von dieser Adresse gesendet.',
+      'checkinSubject': '[LoveYou] {name} hat einen Sicherheits-Check-in durchgeführt',
+      'checkinGreeting': 'Hallo {name},',
+      'checkinBody': '{name} hat um {time} einen Sicherheits-Check-in durchgeführt. Alles in Ordnung.',
       'settingsSubject': '[LoveYou] {name} hat die Sicherheitseinstellungen aktualisiert',
       'settingsGreeting': 'Hallo {name},',
       'settingsChanged': '{name} hat die LoveYou Sicherheitseinstellungen aktualisiert:',
@@ -439,6 +486,9 @@ class AlertEmailService {
       'emailNotConfigured': 'メール未設定',
       'testSubject': '[LoveYou] メール設定テスト',
       'testBody': 'おめでとうございます！LoveYouのメール設定が完了しました。\n必要な時、このアドレスからメールが送信されます。',
+      'checkinSubject': '[LoveYou] {name} が安全チェックインを完了しました',
+      'checkinGreeting': '{name} さん、こんにちは。',
+      'checkinBody': '{name} は {time} に安全チェックインを完了しました。問題ありません。',
       'settingsSubject': '[LoveYou] {name} が安全設定を更新しました',
       'settingsGreeting': '{name} さん、こんにちは。',
       'settingsChanged': '{name} がLoveYouの安全設定を更新しました：',
@@ -464,6 +514,9 @@ class AlertEmailService {
       'emailNotConfigured': '이메일 미설정',
       'testSubject': '[LoveYou] 이메일 설정 테스트',
       'testBody': '축하합니다! LoveYou 이메일이 설정되었습니다.\n도움이 필요할 때 이 주소로 이메일이 발송됩니다.',
+      'checkinSubject': '[LoveYou] {name} 님이 안전 체크인을 완료했습니다',
+      'checkinGreeting': '{name} 님, 안녕하세요.',
+      'checkinBody': '{name} 님이 {time}에 안전 체크인을 완료했습니다. 모든 것이 정상입니다.',
       'settingsSubject': '[LoveYou] {name} 님이 안전 설정을 업데이트했습니다',
       'settingsGreeting': '{name} 님, 안녕하세요.',
       'settingsChanged': '{name} 님이 LoveYou 안전 설정을 업데이트했습니다:',
@@ -489,6 +542,9 @@ class AlertEmailService {
       'emailNotConfigured': 'Email não configurado',
       'testSubject': '[LoveYou] Teste de configuração de email',
       'testBody': 'Parabéns! Seu email do LoveYou está configurado.\nQuando precisar de ajuda, os emails serão enviados deste endereço.',
+      'checkinSubject': '[LoveYou] {name} fez check-in de segurança',
+      'checkinGreeting': 'Olá {name},',
+      'checkinBody': '{name} completou um check-in de segurança às {time}. Tudo está bem.',
       'settingsSubject': '[LoveYou] {name} atualizou as configurações de segurança',
       'settingsGreeting': 'Olá {name},',
       'settingsChanged': '{name} atualizou as configurações de segurança do LoveYou:',
@@ -514,6 +570,9 @@ class AlertEmailService {
       'emailNotConfigured': 'Email non configurata',
       'testSubject': '[LoveYou] Test configurazione email',
       'testBody': 'Congratulazioni! La tua email LoveYou è configurata.\nIn caso di bisogno, le email verranno inviate da questo indirizzo.',
+      'checkinSubject': '[LoveYou] {name} ha effettuato un check-in di sicurezza',
+      'checkinGreeting': 'Ciao {name},',
+      'checkinBody': '{name} ha completato un check-in di sicurezza alle {time}. Tutto bene.',
       'settingsSubject': '[LoveYou] {name} ha aggiornato le impostazioni di sicurezza',
       'settingsGreeting': 'Ciao {name},',
       'settingsChanged': '{name} ha aggiornato le impostazioni di sicurezza di LoveYou:',

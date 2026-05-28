@@ -22,6 +22,7 @@ class _PurchasePageState extends State<PurchasePage> {
   List<ProductDetails> _products = [];
   bool _loading = true;
   bool _purchasing = false;
+  bool _restoring = false;
 
   @override
   void initState() {
@@ -62,7 +63,10 @@ class _PurchasePageState extends State<PurchasePage> {
   }
 
   void _onPurchaseUpdated(List<PurchaseDetails> purchases) {
+    if (!mounted) return;
+    debugPrint('[IAP] purchaseStream event: ${purchases.length} items');
     for (final purchase in purchases) {
+      debugPrint('[IAP] product=${purchase.productID} status=${purchase.status}');
       switch (purchase.status) {
         case PurchaseStatus.purchased:
         case PurchaseStatus.restored:
@@ -70,10 +74,8 @@ class _PurchasePageState extends State<PurchasePage> {
           break;
         case PurchaseStatus.error:
           debugPrint('[IAP] Purchase error: ${purchase.error?.message}');
-          setState(() => _purchasing = false);
           break;
         case PurchaseStatus.canceled:
-          setState(() => _purchasing = false);
           break;
         case PurchaseStatus.pending:
           break;
@@ -83,9 +85,17 @@ class _PurchasePageState extends State<PurchasePage> {
         _iap.completePurchase(purchase);
       }
     }
+
+    if (mounted) {
+      setState(() {
+        _purchasing = false;
+        _restoring = false;
+      });
+    }
   }
 
   void _deliverProduct(PurchaseDetails purchase) {
+    debugPrint('[IAP] _deliverProduct: ${purchase.productID}');
     final state = context.read<AppState>();
 
     if (purchase.productID == AppConstants.iapUnlockProductId) {
@@ -94,8 +104,6 @@ class _PurchasePageState extends State<PurchasePage> {
     } else if (purchase.productID == AppConstants.iapExtraContactProductId) {
       state.addExtraContactSlot();
     }
-
-    setState(() => _purchasing = false);
   }
 
   Future<void> _buyUnlock() async {
@@ -115,7 +123,10 @@ class _PurchasePageState extends State<PurchasePage> {
     setState(() => _purchasing = true);
     try {
       final param = PurchaseParam(productDetails: product);
-      await _iap.buyNonConsumable(purchaseParam: param);
+      final success = await _iap.buyNonConsumable(purchaseParam: param);
+      if (!success && mounted) {
+        setState(() => _purchasing = false);
+      }
     } catch (e) {
       debugPrint('[IAP] buyUnlock error: $e');
       if (mounted) setState(() => _purchasing = false);
@@ -132,7 +143,10 @@ class _PurchasePageState extends State<PurchasePage> {
     setState(() => _purchasing = true);
     try {
       final param = PurchaseParam(productDetails: product);
-      await _iap.buyConsumable(purchaseParam: param);
+      final success = await _iap.buyConsumable(purchaseParam: param);
+      if (!success && mounted) {
+        setState(() => _purchasing = false);
+      }
     } catch (e) {
       debugPrint('[IAP] buyExtraContact error: $e');
       if (mounted) setState(() => _purchasing = false);
@@ -140,24 +154,43 @@ class _PurchasePageState extends State<PurchasePage> {
   }
 
   Future<void> _restore() async {
+    if (!mounted) return;
+    setState(() => _restoring = true);
     try {
+      debugPrint('[IAP] restorePurchases() called');
       await _iap.restorePurchases();
+      debugPrint('[IAP] restorePurchases() completed, waiting for stream...');
+      await Future.delayed(const Duration(seconds: 4));
+      if (!mounted) return;
+      final l10n = AppLocalizations.of(context)!;
+      final nowPurchased = context.read<AppState>().isPurchased;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(nowPurchased ? l10n.purchaseUnlocked : l10n.noRecord)),
+      );
     } catch (e) {
       debugPrint('[IAP] restore error: $e');
+    } finally {
+      if (mounted) setState(() => _restoring = false);
     }
   }
 
   Future<void> _activateServices() async {
     try {
       await BackgroundService.registerPeriodicTasks();
-      try {
-        await LocationService().startPeriodicCaching();
-      } catch (_) {}
-      ActivityService().startMonitoring();
-      debugPrint('[PurchasePage] Services activated after purchase');
     } catch (e) {
-      debugPrint('[PurchasePage] Service activation error: $e');
+      debugPrint('[PurchasePage] BackgroundService error: $e');
     }
+    try {
+      await LocationService().startPeriodicCaching();
+    } catch (e) {
+      debugPrint('[PurchasePage] LocationService error: $e');
+    }
+    try {
+      ActivityService().startMonitoring();
+    } catch (e) {
+      debugPrint('[PurchasePage] ActivityService error: $e');
+    }
+    debugPrint('[PurchasePage] Services activation completed');
   }
 
   String? get _unlockPrice {
@@ -269,8 +302,12 @@ class _PurchasePageState extends State<PurchasePage> {
 
                   const SizedBox(height: 24),
                   TextButton(
-                    onPressed: _restore,
-                    child: Text(l10n.purchaseRestoreButton),
+                    onPressed: _restoring ? null : _restore,
+                    child: _restoring
+                        ? const SizedBox(
+                            width: 16, height: 16,
+                            child: CircularProgressIndicator(strokeWidth: 2))
+                        : Text(l10n.purchaseRestoreButton),
                   ),
                 ],
               ),

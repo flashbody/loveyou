@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:love_you/l10n/generated/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../../app/app_state.dart';
+import '../../core/services/alert_email_service.dart';
 import '../contacts/contacts_page.dart';
 import '../message/message_page.dart';
 import '../payment/purchase_page.dart';
@@ -68,6 +69,10 @@ class SettingsPage extends StatelessWidget {
                 return;
               }
               state.updateCheckinMode(v);
+              final desc = v ? l10n.settingsAutoMode : l10n.settingsManualMode;
+              AlertEmailService().sendSettingsChangeNotification(
+                changeDescription: '${l10n.settingsCheckinMode}: $desc',
+              );
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(l10n.modeChangeNotice)),
               );
@@ -85,6 +90,12 @@ class SettingsPage extends StatelessWidget {
                 return;
               }
               state.updateCheckinInterval(v!);
+              AlertEmailService().sendSettingsChangeNotification(
+                changeDescription: '${l10n.settingsCheckinInterval}: ${l10n.settingsInterval24h}',
+              );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.modeChangeNotice)),
+              );
             },
           ),
           RadioListTile<int>(
@@ -97,6 +108,12 @@ class SettingsPage extends StatelessWidget {
                 return;
               }
               state.updateCheckinInterval(v!);
+              AlertEmailService().sendSettingsChangeNotification(
+                changeDescription: '${l10n.settingsCheckinInterval}: ${l10n.settingsInterval12h}',
+              );
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(l10n.modeChangeNotice)),
+              );
             },
           ),
           const Divider(),
@@ -205,6 +222,9 @@ class SettingsPage extends StatelessWidget {
                   trailing: h == current ? const Icon(Icons.check) : null,
                   onTap: () {
                     state.updateInactivityThreshold(h);
+                    AlertEmailService().sendSettingsChangeNotification(
+                      changeDescription: '${l10n.settingsInactivityThreshold}: ${l10n.settingsInactivityHours(h)}',
+                    );
                     Navigator.pop(ctx);
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text(l10n.thresholdChangeNotice)),

@@ -6,6 +6,7 @@ import '../../app/app_state.dart';
 import '../../core/models/checkin_record.dart';
 import '../../core/storage/storage_service.dart';
 import '../../core/services/activity_service.dart';
+import '../../core/services/alert_email_service.dart';
 import '../../core/services/voice_checkin_service.dart';
 import '../payment/purchase_page.dart';
 
@@ -58,6 +59,8 @@ class _CheckinPageState extends State<CheckinPage>
 
     setState(() => _justCheckedIn = true);
     context.read<AppState>().refresh();
+
+    AlertEmailService().sendCheckinNotification();
 
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) setState(() => _justCheckedIn = false);
