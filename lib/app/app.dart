@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:love_you/l10n/generated/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'app_state.dart';
 import '../core/theme/app_theme.dart';
@@ -9,6 +9,7 @@ import '../core/models/emergency_contact.dart';
 import '../core/storage/storage_service.dart';
 import '../features/checkin/checkin_page.dart';
 import '../features/settings/settings_page.dart';
+import '../features/splash/splash_page.dart';
 
 class LoveYouApp extends StatelessWidget {
   const LoveYouApp({super.key});
@@ -49,9 +50,11 @@ class LoveYouApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: AppLocalizations.supportedLocales,
-          home: state.hasProfile
-              ? const MainShell()
-              : const SetupPage(),
+          home: SplashPage(
+            child: state.hasProfile
+                ? const MainShell()
+                : const SetupPage(),
+          ),
         );
       },
     );

@@ -43,6 +43,7 @@ dependencies:
   # Speech Recognition (P1)
   speech_to_text: ^7.0.0
   mailer: ^6.6.0
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   hive_generator: ^2.0.1
   build_runner: ^2.4.13
+  flutter_launcher_icons: ^0.14.3
 
 flutter:
   uses-material-design: true
@@ -58,3 +60,28 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/icon/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
+  web:
+    generate: false
+
+flutter_native_splash:
+  color: "#FFF0F3"
+  image: "assets/icon/app_icon.png"
+  color_dark: "#1A1A1A"
+  image_dark: "assets/icon/app_icon.png"
+  android_12:
+    color: "#FFF0F3"
+    icon_background_color: "#FFF0F3"
+    image: "assets/icon/app_icon.png"
+    color_dark: "#1A1A1A"
+    icon_background_color_dark: "#1A1A1A"
+    image_dark: "assets/icon/app_icon.png"
+  ios: true
+  android: true
